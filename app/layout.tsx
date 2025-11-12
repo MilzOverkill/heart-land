@@ -1,16 +1,25 @@
-import type { Metadata } from 'next';
-import { David_Libre } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Open_Sans, David_Libre } from "next/font/google";
+import "./globals.css";
 
+// Default font (for all body text)
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+// Secondary font (for headings only)
 const davidLibre = David_Libre({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-david-libre", // this creates a CSS variable
 });
 
 export const metadata: Metadata = {
-  title: 'Heart Land',
-  description: 'Discover authentic Sri Lankan goods in the UAE',
+  title: "Heart Land",
+  description: "Discover authentic Sri Lankan goods in the UAE",
 };
 
 export default function RootLayout({
@@ -19,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-   <html lang="en">
-  <body>{children}</body>
-</html>
+    <html lang="en" className={`${openSans.className} ${davidLibre.variable}`}>
+      <body>{children}</body>
+    </html>
   );
 }
