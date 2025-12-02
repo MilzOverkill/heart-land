@@ -175,12 +175,12 @@ export default function OurProjects() {
       </div>
 
       {/* SLIDE ARROWS — aligned right */}
-      <div className="absolute right-0 top-[260px] flex items-center gap-4 px-4">
-        <button className="w-9 h-9 bg-white rounded-full shadow flex items-center justify-center">
-          ←
+      <div className="absolute right-40 top-[180px]  flex items-center gap-4 px-4">
+        <button className="w-15 h-15 bg-[#D9D9D6] rounded-full shadow flex items-center justify-center">
+         <span className="text-black text-3xl font-sm">&lt;</span>
         </button>
-        <button className="w-9 h-9 bg-white rounded-full shadow flex items-center justify-center">
-          →
+        <button className="w-15 h-15 bg-[#D9D9D6] rounded-full shadow flex items-center justify-center">
+            &gt;
         </button>
       </div>
 

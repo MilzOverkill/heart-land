@@ -1,7 +1,9 @@
+import CsrIntro from '@/components/cSRIntro';
 import CsrShowcase from '@/components/csrShowcase';
 import Footer from '@/components/footer';
 import Navbar from '@/components/Navbar';
 import OurProjects from '@/components/ourProjects';
+import WhatPeopleSays from '@/components/whatPeopleSays';
 
 export default function csr() {
   return (
@@ -9,6 +11,8 @@ export default function csr() {
     <Navbar />
     <CsrShowcase />
     <OurProjects />
+    <CsrIntro />
+    <WhatPeopleSays />
     
     <Footer />
    
