@@ -27,7 +27,7 @@ const inter = Inter({
 
 export default function OurProjects() {
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-11 py-14 relative">
+    <section className="w-full max-w-[1400px] mx-auto px-11 py-10 -mt-20 mb-15 relative">
 
       {/* BG Pattern */}
 <div className="absolute bottom-0 left-0 w-full h-[50vh] overflow-hidden pointer-events-none select-none -z-10">
@@ -174,13 +174,13 @@ export default function OurProjects() {
         </div>
       </div>
 
-      {/* SLIDE ARROWS — aligned right */}
-      <div className="absolute right-40 top-[180px]  flex items-center gap-4 px-4">
-        <button className="w-15 h-15 bg-[#D9D9D6] rounded-full shadow flex items-center justify-center">
-         <span className="text-black text-3xl font-sm">&lt;</span>
+      {/* SLIDE ARROWS */}
+      <div className="absolute right-40 top-[130px]  flex items-center gap-4 px-4">
+        <button className="w-14 h-14 bg-[#D9D9D6] rounded-full shadow flex items-center justify-center">
+         <span className="text-black text-4xl font-sm">&lsaquo;</span>
         </button>
-        <button className="w-15 h-15 bg-[#D9D9D6] rounded-full shadow flex items-center justify-center">
-            &gt;
+        <button className="w-14 h-14 bg-[#D9D9D6] text-4xl rounded-full shadow flex items-center justify-center">
+           &rsaquo;
         </button>
       </div>
 

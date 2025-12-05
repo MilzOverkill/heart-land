@@ -33,7 +33,7 @@ const questrial = Questrial({
 
 export default function CsrShowcase() {
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-8 py-14">
+    <section className="w-full max-w-[1400px] mx-auto px-8 py-0">
       {/* Heading */}
       <h2 className={`${nunito.className} text-2xl md:text-5xl mt-15 font-bold text-center`}>
   Building Communities Beyond Business
