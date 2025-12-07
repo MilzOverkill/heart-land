@@ -60,24 +60,20 @@ export default function HomeHero() {
             </p>
 
             <div className="flex  -ml-8 mt-12 mb-8">
-              <Link href="#">
-                <Image
-                  src="/product-button.png"
-                  alt="product button"
-                  width={180}
-                  height={160}
-                  className="object-contain"
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src="/learn-more-button .png"
-                  alt="learn more button"
-                  width={220}
-                  height={200}
-                  className="object-contain"
-                 />
-              </Link>
+             <Link href="#"><button
+             
+              className="inline-block ml-7 h-13 w-30 bg-black text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+             rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm"
+            >
+              Products
+            </button></Link> 
+              <Link href="/About"><button
+             
+              className="inline-block ml-10 h-13 w-40 bg-[#D11417] text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+             rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm"
+            >
+              Learn More
+            </button></Link> 
             </div>
 
              <div className="flex items-center gap-4 mt-8">

@@ -8,9 +8,7 @@ export default function Contact() {
     <>
     <Navbar />
     <ContactHeader />
-    <ContactGetInTouch />
-    
-    
+    <ContactGetInTouch />      
     <Footer />
    
   
