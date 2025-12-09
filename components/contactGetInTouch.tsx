@@ -38,7 +38,7 @@ export default function ContactGetInTouch() {
               <label className="block text-lg text-[#444444] mb-2">Subject</label>
               <input
                 type="text"
-                className="w-full bg-transparent border-0 border-b border-[#D11417 focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-300"
+                className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-300"
               />
             </div>
 
