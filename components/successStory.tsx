@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Open_Sans, Nunito } from "next/font/google";
+import { b, body } from "framer-motion/client";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -56,17 +57,17 @@ const cards: Card[] = [
 
 export default function BlogsSuccessStory() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const parallaxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (!parallaxRef.current) return;
-      const offset = window.scrollY;
-      parallaxRef.current.style.transform = `translateY(${offset * 0.06}px)`;
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+
+  // useEffect(() => {
+  //   const onScroll = () => {
+  //     if (!parallaxRef.current) return;
+  //     const offset = window.scrollY;
+  //     parallaxRef.current.style.transform = `translateY(${offset * 0.06}px)`;
+  //   };
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
 
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({ left: -330, behavior: "smooth" });
@@ -81,10 +82,11 @@ export default function BlogsSuccessStory() {
       className={`${openSans.variable} ${nunito.variable}`}
       style={{
         maxWidth: "1317px",
-        margin: "120px auto 0", // ✅ natural spacing from previous page
+        margin: "120px auto 120px", // ✅ natural spacing from previous page
         display: "flex",
         flexDirection: "column",
         gap: "40px",
+        
       }}
     >
       {/* Heading */}
@@ -121,7 +123,8 @@ export default function BlogsSuccessStory() {
   ref={scrollRef}
   style={{
     overflowX: "scroll",
-    paddingBottom: "30px",
+    overflowY: "visible",
+    paddingBottom: "20px",
     paddingLeft: "20px",   // ✅ equal left space
     paddingRight: "20px",  // ✅ equal right space
     scrollbarWidth: "none",
@@ -130,78 +133,84 @@ export default function BlogsSuccessStory() {
 >
 
           <div
-            ref={parallaxRef}
+            
             style={{ display: "flex", gap: "30px"}}
           >
             {cards.map((card, index) => (
-              <article
-                key={index}
-                style={{
-      width: "290px", // ✅ reduced
-      borderRadius: "30px",
-      background: "#fff",
-      padding: "15px",
-      display: "flex",
-      flexDirection: "column",
-      gap: "15px",
-      boxShadow: "0px 16px 32px -4px rgba(0,0,0,0.15)",
-      flexShrink: 0, // ✅ prevent shrinking
 
-                }}
-              >
-                <Image
-                  src={card.image}
-      alt={card.title}
-      width={290} // ✅ reduced
-      height={224}
-      style={{
-        borderRadius: "24px",
-        objectFit: "cover",
-      }}
-                />
-
-                <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-                  <Image 
-                  src="/building.png" 
-                  alt="Clock" 
-                  width={18}
-                  height={20} />
-                  
-                  <span
-                    style={{
-                      fontFamily: "var(--font-open-sans)",
-                      fontSize: "14px",
-                      color: "#999",
-                    }}
-                  >
-                    {card.date}
-                  </span>
-                </div>
-
-                <h3
-                  style={{
-                    fontFamily: "var(--font-nunito)",
-                    fontWeight: 700,
-                    fontSize: "20px",
-                    margin: 0,
-                    color: "#243C4B",
-                  }}
-                >
-                  {card.title}
-                </h3>
-
-                <p
-                  style={{
-    whiteSpace: "pre-line",
-    fontFamily: "var(--font-open-sans)",
-    fontSize: "16px",
-    color: "#6D6D6D",
-    lineHeight: "160%",
+            <article
+  key={index}
+  style={{
+    width: "280px",
+    borderRadius: "24px",
+    background: "#fff",
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px",
+    boxShadow: "0px 16px 32px -4px rgba(0,0,0,0.15)",
+    flexShrink: 0,
+    overflow: "hidden", // ensures image rounding is clean
+    
   }}
-                >
-                  {card.description}
-                </p>
-              </article>
+>
+  {/* Image without padding */}
+  <div className="w-full h-[220px] relative overflow-hidden">
+    <Image
+      src={card.image}
+      alt={card.title}
+      fill
+      className="object-cover rounded-b-[15px]"
+
+    />
+  </div>
+
+  {/* Content below image with padding */}
+  <div style={{ padding: "15px" }}>
+    <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+      <Image 
+        src="/building.png" 
+        alt="Clock" 
+        width={18}
+        height={20} 
+      />
+      <span
+        style={{
+          fontFamily: "var(--font-open-sans)",
+          fontSize: "14px",
+          color: "#999",
+        }}
+      >
+        {card.date}
+      </span>
+    </div>
+
+    <h3
+      style={{
+        fontFamily: "var(--font-nunito)",
+        fontWeight: 700,
+        fontSize: "20px",
+        margin: "8px 0 0 0",
+        color: "#243C4B",
+      }}
+    >
+      {card.title}
+    </h3>
+
+    <p
+      style={{
+        whiteSpace: "pre-line",
+        fontFamily: "var(--font-open-sans)",
+        fontSize: "16px",
+        color: "#6D6D6D",
+        lineHeight: "160%",
+        marginTop: "5px",
+      }}
+    >
+      {card.description}
+    </p>
+  </div>
+</article>
+
             ))}
           </div>
         </div>
