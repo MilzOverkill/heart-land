@@ -99,7 +99,7 @@ export default function Faq() {
                   onClick={() =>
                     setOpenIndex(openIndex === index ? -1 : index)
                   }
-                  className={`w-full text-left text-lg font-medium transition-colors duration-300 ${
+                  className={`w-full text-left text-lg cursor-pointer font-medium transition-colors duration-300 ${
                     openIndex === index
                       ? "text-[#D11417]"
                       : "text-gray-800 hover:text-[#ff0004]"
@@ -124,7 +124,7 @@ export default function Faq() {
           </div>
 
           <div className="mt-10 -ml-20">
-            <button className="px-9 py-3 border-2 text-lg border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold">
+            <button className="px-9 py-3 border-2 text-lg cursor-pointer border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold">
               View More
             </button>
           </div>

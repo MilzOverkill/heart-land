@@ -88,7 +88,7 @@ export default function Partners() {
     <Link href="/About">
       <button
         type="button"
-        className="bg-[#D11417] hover:bg-red-700 text-white px-9 py-4 rounded-full font-semibold transition-colors duration-200"
+        className="bg-[#D11417] hover:bg-red-700 text-white cursor-pointer px-9 py-4 rounded-full font-semibold transition-colors duration-200"
       >
         Read More
       </button>

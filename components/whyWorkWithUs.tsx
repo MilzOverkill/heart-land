@@ -72,7 +72,7 @@ export default function WhyWorkWithUs() {
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="p-8 bg-[white] shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow cursor-pointer"
+          className="p-8 bg-[white] shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow"
         >
           <div className="relative flex items-center">
             <div className="w-14 h-14 rounded-full bg-[#D11417] absolute inset-y-0 left-0 my-auto"></div>
@@ -98,7 +98,7 @@ export default function WhyWorkWithUs() {
           </p>
 
           <button
-            className={`${poppins.className} mt-9 text-[#071440] font-semibold text-sm hover:underline`}
+            className={`${poppins.className} mt-9 text-[#071440] cursor-pointer font-semibold text-sm hover:underline`}
           >
             Explore more →
           </button>
@@ -111,7 +111,7 @@ export default function WhyWorkWithUs() {
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="p-8 bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow cursor-pointer"
+          className="p-8 bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow"
         >
           <div className="relative flex items-center">
             <div className="w-14 h-14 rounded-full bg-[#D11417] absolute inset-y-0 left-0 my-auto"></div>
@@ -137,7 +137,7 @@ export default function WhyWorkWithUs() {
           </p>
 
           <button
-            className={`${poppins.className} mt-4 text-[#071440] font-semibold text-sm hover:underline`}
+            className={`${poppins.className} mt-4 text-[#071440] cursor-pointer font-semibold text-sm hover:underline`}
           >
             Explore more →
           </button>
@@ -150,7 +150,7 @@ export default function WhyWorkWithUs() {
           whileInView="show"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="p-8 bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow cursor-pointer"
+          className="p-8 bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow"
         >
           <div className="relative flex items-center">
             <div className="w-14 h-14 rounded-full bg-[#D11417] absolute inset-y-0 left-0 my-auto"></div>
@@ -176,7 +176,7 @@ export default function WhyWorkWithUs() {
           </p>
 
           <button
-            className={`${poppins.className} mt-10 text-[#071440] font-semibold text-sm hover:underline`}
+            className={`${poppins.className} mt-10 text-[#071440] cursor-pointer font-semibold text-sm hover:underline`}
           >
             Explore more →
           </button>

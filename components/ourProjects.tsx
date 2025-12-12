@@ -86,7 +86,7 @@ export default function OurProjects() {
 
           {/* BUTTON */}
  <div className="px-4 mt-4">
-  <button className="flex items-center px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+  <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
     <span className={`${nunito.className}`}>Read More</span>
     <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
       <span className="text-[#D12714] text-xl">↗</span>
@@ -114,7 +114,7 @@ export default function OurProjects() {
           
            {/* BUTTON */}
  <div className="px-4 mt-4">
-  <button className="flex items-center px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+  <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
     <span className={`${nunito.className}`}>Read More</span>
     <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
       <span className="text-[#D12714] text-xl">↗</span>
@@ -139,7 +139,7 @@ export default function OurProjects() {
 
            {/* BUTTON */}
  <div className="px-4 mt-4">
-  <button className="flex items-center px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+  <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
     <span className={`${nunito.className}`}>Read More</span>
     <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
       <span className="text-[#D12714] text-xl">↗</span>
@@ -164,7 +164,7 @@ export default function OurProjects() {
 
            {/* BUTTON */}
  <div className="px-4 mt-4">
-  <button className="flex items-center px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+  <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
     <span className={`${nunito.className}`}>Read More</span>
     <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
       <span className="text-[#D12714] text-xl">↗</span>
@@ -176,10 +176,10 @@ export default function OurProjects() {
 
       {/* SLIDE ARROWS */}
       <div className="absolute right-40 top-[130px]  flex items-center gap-4 px-4">
-        <button className="w-14 h-14 bg-[#D9D9D6] rounded-full shadow flex items-center justify-center">
+        <button className="w-14 h-14 bg-[#D9D9D6] cursor-pointer rounded-full shadow flex items-center justify-center">
          <span className="text-black text-4xl font-sm">&lsaquo;</span>
         </button>
-        <button className="w-14 h-14 bg-[#D9D9D6] text-4xl rounded-full shadow flex items-center justify-center">
+        <button className="w-14 h-14 bg-[#D9D9D6] cursor-pointer text-4xl rounded-full shadow flex items-center justify-center">
            &rsaquo;
         </button>
       </div>

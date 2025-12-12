@@ -63,7 +63,7 @@ export default function HeroBanner() {
               {/* CTA */}
 <Link href="/Contact">
   <button
-    className="mt-6 inline-flex items-center justify-center px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[16px] leading-4 tracking-[0.43em] transition-colors duration-200"
+    className="mt-6 inline-flex items-center justify-center cursor-pointer px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[16px] leading-4 tracking-[0.43em] transition-colors duration-200"
     style={{ textTransform: "uppercase" }}
   >
     CONTACT US

@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Nunito, Open_Sans } from "next/font/google";
 import Image from "next/image";
@@ -40,7 +41,7 @@ export default function GeneralFaqs() {
     },
   ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(0); 
+  const [openIndex, setOpenIndex] = useState<number | null>(0); // First FAQ open by default
 
   return (
     <section className="relative w-full py-36 px-10">
@@ -49,51 +50,48 @@ export default function GeneralFaqs() {
         <Image
           src="/WRLD-EPS-02-4001 1.png"
           alt="World Map Background"
-          className="w-[1030px] h-[600px] object-left"
+          width={1030}
+          height={600}
+          className="object-left"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl  mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
         {/* LEFT SIDE */}
         <div className="ml-32">
-          <h2 className={`text-[32px]  font-bold text-black ${nunito.className}`}>
+          <h2 className={`text-[32px] font-bold text-black ${nunito.className}`}>
             General FAQs
           </h2>
 
-          <p
-            className={`text-[18px] mt-4 max-w-[400px] text-[#333] leading-[28px] ${nunito.className}`}
-          >
+          <p className={`text-[18px] mt-4 max-w-[400px] text-[#333] leading-[28px] ${nunito.className}`}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.
           </p>
         </div>
 
+        {/* RIGHT SIDE: FAQ List */}
         <div className="space-y-5 -ml-20 max-w-[650px]">
-  {faqs.map((faq, index) => (
-    <div key={index}>
-      <p
-        className={`text-[18px] py-2 cursor-pointer font-semibold ${openSans.className} ${
-          openIndex === index
-            ? "text-[#D11417]"  
-            : "text-black border-b border-[#D11417]"  
-        }`}
-        onClick={() =>
-          setOpenIndex(openIndex === index ? null : index)
-        }
-      >
-        {faq.question}
-      </p>
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              <p
+                className={`text-[18px] py-2 cursor-pointer font-semibold ${openSans.className} ${
+                  openIndex === index
+                    ? "text-[#D11417]"
+                    : "text-black border-b border-[#D11417]"
+                }`}
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                {faq.question}
+              </p>
 
-      {openIndex === index && (
-        <p className={`text-[16px] text-[#333] leading-[26px] mt-2 ${nunito.className}`}>
-          {faq.answer}
-        </p>
-      )}
-    </div>
-  ))}
-</div>
-
-
+              {openIndex === index && (
+                <p className={`text-[16px] text-[#333] leading-[26px] mt-2 ${nunito.className}`}>
+                  {faq.answer}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

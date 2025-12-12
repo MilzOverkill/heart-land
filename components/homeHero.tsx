@@ -59,17 +59,17 @@ export default function HomeHero() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
 
-            <div className="flex  -ml-8 mt-12 mb-8">
+            <div className="flex -ml-8 mt-12 mb-8">
              <Link href="#"><button
              
-              className="inline-block ml-7 h-13 w-30 bg-black text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+              className="inline-block cursor-pointer ml-7 h-13 w-30 bg-black text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
              rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm"
             >
               Products
             </button></Link> 
               <Link href="/About"><button
              
-              className="inline-block ml-10 h-13 w-40 bg-[#D11417] text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
+              className="inline-block cursor-pointer ml-10 h-13 w-40 bg-[#D11417] text-white px-5 py-2 shadow-md hover:shadow-lg transition-shadow
              rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm"
             >
               Learn More
@@ -79,33 +79,46 @@ export default function HomeHero() {
              <div className="flex items-center gap-4 mt-8">
               <div className="flex gap-3 items-center">
                 
-              <Link href="#">
+              <a
+    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
                 <Image
                   src="/Facebook.png"
                   alt="FB"
                   width={40}
                   height={40}
-                  className="object-contain"
+                  className="object-contain cursor-pointer"
                 />
-              </Link>
-              <Link href="#">
+              </a>
+
+              <a
+    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
                 <Image
                   src="/insta.png"
                   alt="Insta"
                   width={40}
                   height={40}
-                  className="object-contain"
+                  className="object-contain cursor-pointer"
                  />
-              </Link>
-              <Link href="#">
+              </a>
+              <a
+    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
                 <Image
                   src="/Facebook (2).png"
                   alt="Youtube"
                   width={40}
                   height={40}
-                  className="object-contain"
+                  className="object-contain cursor-pointer"
                  />
-              </Link>
+              </a>
             
                               
                </div>
