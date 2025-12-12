@@ -104,7 +104,7 @@ export default function Testimonials() {
               key={idx}
               onClick={() => scrollToIndex(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`w-2 h-2 rounded-full cursor-pointer transition-all ${
                 idx === activeIndex ? "bg-red-500 scale-125" : "bg-gray-300"
               }`}
             />

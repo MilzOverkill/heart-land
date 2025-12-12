@@ -53,7 +53,7 @@ export default function CsrIntro() {
           {/* PLAY BUTTON */}
           <div className="absolute inset-0 flex items-center justify-center">
   <button 
-    className="flex items-center justify-center rounded-xl hover:scale-110 transition"
+    className="flex items-center cursor-pointer justify-center rounded-xl hover:scale-110 transition"
     style={{
       width: "66.289px",
       height: "45.817px",

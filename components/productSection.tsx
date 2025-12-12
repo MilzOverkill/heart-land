@@ -114,11 +114,11 @@ export default function ProductsSection() {
   const paginated = filtered.slice(page * pageSize, (page + 1) * pageSize);
 
   return (
-    <div className={`${openSans.className} w-full ml-18 max-w-[1200px] mx-auto py-8 -px-2`}>
-       
-
-      <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8">
-        {/* Categories (left) */}
+    <div
+  className={`${openSans.className} w-full max-w-[1200px] mx-auto py-8 px-4`}
+>
+  <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8 justify-center">
+    {/* Categories (left) */}
         <aside className="hidden lg:block mt-5  leading-14">
           <div className="space-y-3">
             <div className="flex items-center  justify-between ">
@@ -139,7 +139,7 @@ export default function ProductsSection() {
                         type="checkbox"
                         checked={checked}
                         onChange={() => toggleCategory(cat)}
-                        className="w-4 h-4"
+                        className="w-4 h-4 cursor-pointer"
                       />
                       <span className={checked ? "font-medium" : "text-[#495057]"}>
                         {cat}
@@ -213,7 +213,7 @@ export default function ProductsSection() {
             {/* Left Arrow */}
             <button
               onClick={() => goToPage(page - 1)}
-              className="text-xl font-bold px-4 py-2"
+              className="text-xl font-bold px-4 py-2 cursor-pointer"
               aria-label="Previous page"
             >
              &#x2190;
@@ -226,7 +226,7 @@ export default function ProductsSection() {
       key={i}
       onClick={() => goToPage(i)}
       aria-label={`Go to page ${i + 1}`}
-      className="relative w-4 h-4 flex items-center justify-center"
+      className="relative w-4 h-4 flex items-center cursor-pointer justify-center"
     >
       {/* Outer Ring */}
       <span
@@ -236,7 +236,7 @@ export default function ProductsSection() {
 
       {/* Inner Dot */}
       <span
-        className={`absolute w-1 h-1 rounded-full transition 
+        className={`absolute w-1 h-1 rounded-full transition cursor-pointer 
           ${i === page ? "bg-black" : "bg-black"}`}
       />
     </button>
@@ -247,7 +247,7 @@ export default function ProductsSection() {
             {/* Right Arrow */}
             <button
               onClick={() => goToPage(page + 1)}
-              className="text-xl font-bold px-4 py-2"
+              className="text-xl font-bold px-4 py-2 cursor-pointer"
               aria-label="Next page"
             >
               &#x2192;

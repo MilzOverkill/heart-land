@@ -83,7 +83,7 @@ export default function CsrShowcase() {
           >
             <span className={`${inter.className} text-white text-sm`}>Learn More</span>
 
-            <div className="w-12 h-12 rounded-full  flex items-center justify-center translate-x-[10px]">
+            <div className="w-12 h-12 rounded-full cursor-pointer flex items-center justify-center translate-x-[10px]">
               <Image src="/arrowY.png" alt="" fill className="object-cover" />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function CsrShowcase() {
           >
             <span className={`${inter.className} text-white text-sm`}>See all our moments</span>
 
-            <div className="w-12 h-12 rounded-full  flex items-center justify-center translate-x-[10px]">
+            <div className="w-12 h-12 rounded-full cursor-pointer flex items-center justify-center translate-x-[10px]">
               <Image src="/arrowB.png" alt="" fill className="object-cover" />
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function CsrShowcase() {
           >
             <span className={`${inter.className} text-[#3A3232] text-sm`}>Join Community</span>
 
-            <div className="w-12 h-12 rounded-full  flex items-center justify-center translate-x-[10px]">
+            <div className="w-12 h-12 rounded-full cursor-pointer flex items-center justify-center translate-x-[10px]">
               <Image src="/arrowB.png" alt="" fill className="object-cover" />
             </div>
           </div>
