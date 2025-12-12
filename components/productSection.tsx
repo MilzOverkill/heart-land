@@ -114,7 +114,7 @@ export default function ProductsSection() {
   const paginated = filtered.slice(page * pageSize, (page + 1) * pageSize);
 
   return (
-    <div className={`${openSans.className} w-full ml-10 max-w-[1200px] mx-auto py-8 -px-2`}>
+    <div className={`${openSans.className} w-full ml-18 max-w-[1200px] mx-auto py-8 -px-2`}>
        
 
       <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-8">
