@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Open_Sans, David_Libre } from "next/font/google";
 import "./globals.css";
+import FadeTransition from "../components/FadeTransition";
+import Navbar from "../components/Navbar";
+import Footer from "@/components/footer";
+import { NavigationProvider } from "@/contexts/NavigationContext";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -24,7 +28,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${openSans.variable} ${davidLibre.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NavigationProvider>
+          <Navbar />
+          <FadeTransition>
+            {children}
+          </FadeTransition>
+          <Footer/>
+        </NavigationProvider>
+      </body>
     </html>
   );
 }
