@@ -17,7 +17,7 @@ export default function VisionMission() {
     <section className="py-0 bg-white">
       <div>
         {/* Heading */}
-        <div className="text-center space-y-12 leading-8 mb-20 mx-auto font-nunito">
+        <div className="text-center space-y-6 leading-8 mb-8 mx-auto font-nunito">
           <h2 className="text-2xl md:text-5xl font-bold text-gray-900 transition-transform duration-500 hover:scale-[1.02]">
             Our Identity Vision and Mission
           </h2>

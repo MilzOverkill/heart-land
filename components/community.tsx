@@ -24,8 +24,8 @@ export default function CommunitySection() {
         <Image
   src="/unsplash.png"
   alt="Community"
-  width={900}        // increased from 750
-  height={800}       // increased from 650
+  width={900}        
+  height={800}       
   className="max-w-[1800px] w-auto h-auto rounded-r-[70px] transition-transform duration-300"
 />
 

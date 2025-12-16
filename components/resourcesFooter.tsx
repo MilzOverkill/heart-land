@@ -1,6 +1,4 @@
 import { Open_Sans } from "next/font/google";
-import Image from "next/image";
-
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans",
@@ -8,7 +6,7 @@ const openSans = Open_Sans({
 
 export default function Footer() {
   return (
-    <footer className={`${openSans.className} bg-[#1B1D21] text-white md:pb-10 md:pt-10 mt-10px-6 md:px-15 md:py-0 py-1`}>
+    <footer className={`${openSans.className} bg-[#1B1D21] text-white md:pb-10 md:pt-10 mt-0 px-6 md:px-15 md:py-0 py-1`}>
    
       {/* Container to center the content */}
       <div className="max-w-7xl mx-auto">
@@ -81,7 +79,7 @@ export default function Footer() {
 
     <p className="text-sm mb-1">info@heartlandtrading.ae</p>
     <p className="text-sm mb-4">+971 4 265 9072</p>
-    <button className="text-sm underline transition-all duration-300 ease-out hover:scale-105 hover:text-[#D11417] hover:shadow-[0_8px_16px_rgba(209,20,23,0.2)] hover:-translate-y-1 transform-gpu">Inquire Now</button>
+    <button className="text-sm underline">Inquire Now</button>
   </div>
 
 </div>
@@ -99,38 +97,10 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-4 mt-4 md:mt-0">
-            <Image
-  src="/fb.png"
-  alt="Facebook"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/>
-
-<Image
-  src="/twitter.png"
-  alt="Twitter"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/>
-
-<Image
-  src="/instagram.png"
-  alt="Instagram"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/>
-
-<Image
-  src="/youtub.png"
-  alt="YouTube"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/>
-
+            <img src="/fb.png" alt="Facebook" className="w-5 h-5" />
+            <img src="/twitter.png" alt="Twitter" className="w-5 h-5" />
+            <img src="/instagram.png" alt="Instagram" className="w-5 h-5" />
+            <img src="/youtub.png" alt="YouTube" className="w-5 h-5" />
           </div>
         </div>
 

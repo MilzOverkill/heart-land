@@ -19,7 +19,7 @@ useEffect(() => {
   useEffect(() => {
     const handleScroll = () => {
       if (!imageRef.current) return;
-      const offset = window.scrollY * 0.02; // slow parallax
+      const offset = window.scrollY * 0.04; // slow parallax
       imageRef.current.style.transform = `translateY(${offset}px)`;
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -62,23 +62,23 @@ useEffect(() => {
           <Image
             src="/Rectangle 88.png"
             alt="About 1"
-            width={700}
-            height={600}
+            width={720}
+            height={620}
             className="rounded-xl"
           />
           <Image
             src="/Subtract.png"
             alt="About 2"
-            width={600}
-            height={500}
+            width={620}
+            height={520}
             className="rounded-xl mt-7" 
           /> 
           <div className="grid grid-cols-2 gap-5 absolute -bottom-16 left-0">
             <Image
               src="/Rectangle 90.png"
               alt="food 1"
-              width={270}
-              height={220}
+              width={290}
+              height={240}
               className="rounded-lg -ml-14 -mb-3" 
             />
             <div className="absolute text-center ml-32 -mb-[19px] text-3xl bottom-4 left-4 bg-[#309EC4] rounded-xl text-white px-7 py-6 font-bold">
