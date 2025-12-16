@@ -27,7 +27,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="  bg-white text-slate-900">
       {/* About Section */}
       <section className="max-w-7xl mx-auto px-6 mt-30 flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 ml-28 mb-20">

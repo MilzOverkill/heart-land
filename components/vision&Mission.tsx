@@ -14,7 +14,7 @@ export default function VisionMission() {
   }, []);
 
   return (
-    <section className="py-0 bg-white">
+    <section className="py-36 bg-white">
       <div>
         {/* Heading */}
         <div className="text-center space-y-6 leading-8 mb-8 mx-auto font-nunito">

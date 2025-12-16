@@ -18,20 +18,23 @@ export default function CommunitySection() {
 
   return (
     <section className={`w-full   flex justify-center py-20 bg-white ${openSans.className}`}>
-      <div className="grid grid-cols-1 -mt-30 md:grid-cols-2 gap-36 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-36 items-center -mt-10 md:-mt-30">
 
-        {/* IMAGE */}
-        <Image
-  src="/unsplash.png"
+ <div className="relative w-[800px]  h-[300px] md:h-[450px] lg:h-[400px]  overflow-hidden">
+          
+     <Image
+  src="/community-hero.png"
   alt="Community"
-  width={900}        
-  height={800}       
-  className="max-w-[1800px] w-auto h-auto rounded-r-[70px] transition-transform duration-300"
+  width={1200}
+  height={800}
+  className="w-full max-w-full h-full rounded-r-[200px] object-cover"
 />
+</div>
+
 
 
         {/* TEXT */}
-        <div className="ml-24">
+        <div className="md:ml-24 ml-4">
           <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
             Be part of our community
           </h2>

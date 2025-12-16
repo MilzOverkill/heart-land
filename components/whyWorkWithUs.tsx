@@ -32,7 +32,7 @@ useEffect(() => {
   if (!mounted) return null; // render nothing on server
 
   return (
-    <div className="w-full mt-10 min-h-screen bg-white text-gray-900 overflow-hidden">
+    <div className="w-full -mt-20 min-h-screen bg-white text-gray-900 overflow-hidden">
       {/* Parallax Header */}
       <motion.div style={{ y: y1 }} className="pt-32 pb-10 text-center">
         <motion.h4
