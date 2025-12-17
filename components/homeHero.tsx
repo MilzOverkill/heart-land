@@ -110,7 +110,7 @@ useEffect(() => {
                   alt="FB"
                   width={40}
                   height={40}
-                  className="object-contain cursor-pointer"
+                  className="object-contain cursor-pointer transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1"
                 />
               </a>
 
@@ -124,7 +124,7 @@ useEffect(() => {
                   alt="Insta"
                   width={40}
                   height={40}
-                  className="object-contain cursor-pointer"
+                  className="object-contain cursor-pointer transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1"
                  />
               </a>
               <a
@@ -137,7 +137,7 @@ useEffect(() => {
                   alt="Youtube"
                   width={40}
                   height={40}
-                  className="object-contain cursor-pointer"
+                  className="object-contain cursor-pointer transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1"
                  />
               </a>
             

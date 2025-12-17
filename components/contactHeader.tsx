@@ -31,7 +31,7 @@ export default function ContactHeader() {
           <h2 className="text-[55px] font-bold">Contact Us</h2>
 
           <p className="text-[29px] max-w-[850px] mx-auto mt-3 opacity-90">
-            We are alwasy ready to help you and answer your questions
+            We are always ready to help you and answer your questions
           </p>
 
           {/* Centered social row */}
@@ -48,6 +48,7 @@ export default function ContactHeader() {
       alt="Facebook"
       width={20}   
       height={20} 
+      className="transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1"
     />
   </a>
 
@@ -56,7 +57,7 @@ export default function ContactHeader() {
     target="_blank"
     rel="noopener noreferrer"
   >
-  <Image src="/instawhite.png" alt="Instagram" width={20} height={20} />
+  <Image src="/instawhite.png" alt="Instagram" width={20} height={20} className="transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1" />
   </a>
 
   <a
@@ -64,7 +65,7 @@ export default function ContactHeader() {
     target="_blank"
     rel="noopener noreferrer"
   >
-  <Image src="/ytwhite.png" alt="YouTube" width={20} height={20} />
+  <Image src="/ytwhite.png" alt="YouTube" width={20} height={20} className="transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1" />
   </a>
   
 </div>
