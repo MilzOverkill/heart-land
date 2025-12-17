@@ -1,5 +1,6 @@
 import { Open_Sans } from "next/font/google";
 import Image from "next/image";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -13,7 +14,6 @@ export default function Footer() {
       {/* Container to center the content */}
       <div className="max-w-7xl mx-auto">
 
-        {/* Grid with left wide, right 3 equal columns */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 border-b border-gray-700 pb-10">
 
           {/* LEFT SECTION */}
@@ -34,8 +34,10 @@ export default function Footer() {
               Join our global community that celebrates authentic flavour, quality, and sustainability.
             </p>
 
-            <div className="flex gap-6 text-sm mt-4">
-              <a href="#">Facebook</a>
+            
+
+            <div className="flex gap-6 text-sm mt-4 cursor-pointer">
+              <a href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#">Facebook</a>
               <a href="#">Instagram</a>
               <a href="#">LinkedIn</a>
             </div>
@@ -98,60 +100,48 @@ export default function Footer() {
             <a href="#">Cookies</a>
           </div>
 
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a
-    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-            <Image
-  src="/fb.png"
-  alt="Facebook"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/></a>
 
-<a
-    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
-    target="_blank"
-    rel="noopener noreferrer"
-  > 
-<Image
-  src="/twitter.png"
-  alt="Twitter"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/></a>
+           <div className="flex items-center gap-4">
+      <a
+        href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
+      >
+        <FaFacebookF className="text-white" size={10} />
+      </a>
 
-<a
-    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
-    target="_blank"
-    rel="noopener noreferrer"
-  > 
-<Image
-  src="/instagram.png"
-  alt="Instagram"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/></a>
+      <a
+        href="https://twitter.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
+      >
+        <FaTwitter className="text-white" size={10} />
+      </a>
 
-<a
-    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-<Image
-  src="/youtub.png"
-  alt="YouTube"
-  width={20}
-  height={20}
-  className="w-5 h-5"
-/></a>
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
+      >
+        <FaInstagram className="text-white" size={10} />
+      </a>
 
-          </div>
+      
+
+      <a
+        href="https://youtube.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
+      >
+        <FaYoutube className="text-white" size={10} />
+      </a>
+    </div>
+
+          
         </div>
 
       </div>
