@@ -130,7 +130,7 @@ export default function Faq() {
           </div>
 
           <div className="mt-10 -ml-20">
-            <button className="px-9 py-3 border-2 text-lg cursor-pointer border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold">
+            <button className="px-9 py-3 border-2 text-lg cursor-pointer border-[#D11417] text-[#D11417] rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 font-extrabold hover:scale-[1.02] hover:-translate-y-1">
               View More
             </button>
           </div>

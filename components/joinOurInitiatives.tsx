@@ -63,7 +63,7 @@ React.useEffect(() => {
               Learn More
             </button>
 
-            <button className="group flex items-center justify-center gap-3 cursor-pointer border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-[20px] leading-[100%] px-6 py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white">
+            <button className="group flex items-center justify-center gap-3 cursor-pointer border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-[20px] leading-[100%] px-6 py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:scale-[1.02] hover:-translate-y-1">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#000000] transition-all duration-300 group-hover:bg-white">
                 <Play className="w-7 h-7 fill-white transition-all duration-300 group-hover:fill-[#000000]" />
               </div>
