@@ -17,7 +17,7 @@ export default function Footer() {
         {/* MOBILE LAYOUT */}
         <div className="block md:hidden">
           {/* Stay Connected With Heartland */}
-          <h3 className="text-[24px] font-normal mb-4">Stay Connected With Heartland!</h3>
+          <h3 className="text-[20px] font-normal mb-4">Stay Connected With Heartland!</h3>
 
           {/* Email */}
           <div className="flex items-center justify-between mb-4 cursor-pointer w-full">
