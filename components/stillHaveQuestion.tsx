@@ -65,7 +65,7 @@ export default function HaveQ() {
   className="
     absolute
     right-7 md:right-8
-    top-10 md:top-40
+    top-56 md:top-40
     -translate-y-40
     pointer-events-none
     w-30 h-25 md:w-[220px] md:h-[220px]
