@@ -5,7 +5,6 @@ import { Play } from "lucide-react";
 
 export default function Initiative() {
   const imageRef = React.useRef<HTMLDivElement>(null);
-  const bgImageRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -13,10 +12,6 @@ export default function Initiative() {
 
       if (imageRef.current) {
         imageRef.current.style.transform = `translateY(${y * 0.04}px)`;
-      }
-
-      if (bgImageRef.current) {
-        bgImageRef.current.style.transform = `translateY(${y * 0.06}px)`;
       }
     };
 
@@ -27,7 +22,7 @@ export default function Initiative() {
   return (
     <section className="py-10 md:py-16 lg:pt-40 lg:pb-64 bg-white relative overflow-hidden">
       {/* Right side background image */}
-      <div ref={bgImageRef} className="absolute right-0 -top-70 bottom-0 w-[50%] md:w-[700px] opacity-60 md:opacity-70 lg:opacity-80 pointer-events-none">
+      <div className="absolute right-0 top-0 bottom-0 w-[50%] md:w-[700px] opacity-60 md:opacity-70 lg:opacity-80 pointer-events-none">
         <Image
           src="/initiatives bg.png"
           alt="Background Shape"
