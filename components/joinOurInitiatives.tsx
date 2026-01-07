@@ -7,16 +7,29 @@ export default function Initiative() {
   const imageRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const handleScroll = () => {
-      const y = window.scrollY;
+    let rafId: number | null = null;
+    let lastScrollY = 0;
 
-      if (imageRef.current) {
-        imageRef.current.style.transform = `translateY(${y * 0.04}px)`;
+    const handleScroll = () => {
+      lastScrollY = window.scrollY;
+
+      if (rafId === null) {
+        rafId = requestAnimationFrame(() => {
+          if (imageRef.current) {
+            imageRef.current.style.transform = `translateY(${lastScrollY * 0.04}px)`;
+          }
+          rafId = null;
+        });
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   return (
