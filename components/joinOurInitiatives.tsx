@@ -6,23 +6,36 @@ import { Play } from "lucide-react";
 export default function Initiative() {
   const imageRef = React.useRef<HTMLDivElement>(null);
 
-React.useEffect(() => {
-  const handleScroll = () => {
-    const y = window.scrollY;
+  React.useEffect(() => {
+    let rafId: number | null = null;
+    let lastScrollY = 0;
 
-    if (imageRef.current) {
-      imageRef.current.style.transform = `translateY(${y * 0.06}px)`;
-    }
-  };
+    const handleScroll = () => {
+      lastScrollY = window.scrollY;
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+      if (rafId === null) {
+        rafId = requestAnimationFrame(() => {
+          if (imageRef.current) {
+            imageRef.current.style.transform = `translateY(${lastScrollY * 0.04}px)`;
+          }
+          rafId = null;
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+    };
+  }, []);
 
   return (
-    <section className="py-10 md:py-16 lg:py-6 bg-white relative overflow-hidden">
-      {/* Right side background image */}
-      <div className="absolute right-0 -top-24 bottom-0 w-[400px] md:w-[700px] opacity-50 md:opacity-100 pointer-events-none">
+    <section className="py-16 md:py-16 lg:pt-40 lg:pb-64 bg-white relative overflow-hidden">
+      {/* Right side background image - Desktop only */}
+      <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[700px] opacity-80 pointer-events-none">
         <Image
           src="/initiatives bg.png"
           alt="Background Shape"
@@ -32,42 +45,113 @@ React.useEffect(() => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
-        {/* Left Section - Images */}
-        <div ref={imageRef} className="relative mx-auto md:ml-20 w-64 h-64 sm:w-80 sm:h-80 md:w-[430px] md:h-[430px] overflow-visible">
-          <Image
-            src="/Group 69.png"
-            alt="Child Initiative"
-            fill
-            className="object-contain"
-          />
-        </div>
-
-        {/* Right Section - Text Content */}
-        <div className="space-y-4 sm:space-y-6 md:-mt-40 text-center md:text-left px-4 md:px-0">
-          <p className="uppercase text-gray-400 text-xs sm:text-sm tracking-widest">
+      {/* Mobile Layout */}
+      <div className="lg:hidden max-w-2xl mx-auto px-6 relative">
+        {/* Content */}
+        <div className="relative z-10 text-center space-y-6">
+          <p className="uppercase text-[18px] text-gray-400 text-sm tracking-[0.2em]" style={{ fontFamily: 'Open Sans' }}>
             C S R
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+
+          <h2 className="text-[20px] sm:text-5xl font-bold text-black leading-tight" style={{ fontFamily: 'Open Sans' }}>
             Join our initiatives
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+
+          {/* Image with background */}
+          <div className="relative mx-auto w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] my-8">
+            {/* Background image behind child initiative */}
+            <div className="absolute inset-0 flex items-center justify-start opacity-50 pointer-events-none scale-150 -left-8 -top-18">
+              <Image
+                src="/initiatives bg.png"
+                alt="Background Shape"
+                width={400}
+                height={400}
+                className="object-contain"
+              />
+            </div>
+            {/* Child initiative image */}
+            <Image
+              src="/Group 69.png"
+              alt="Child Initiative"
+              fill
+              className="object-contain relative z-10"
+              priority
+            />
+          </div>
+
+          <p className="text-[#6A6969] text-[13px] sm:text-lg leading-relaxed max-w-lg mx-auto px-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing
             elit. Sed do eiusmod tempor.
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 pt-4 sm:pt-6">
-            <button className="bg-black text-base sm:text-lg md:text-[20px] text-white cursor-pointer px-8 sm:px-12 md:px-16 py-3 rounded-full font-semibold border-2 border-black transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black">
+          <div className="flex flex-row gap-3 pt-4 px-4 justify-center items-center">
+            {/* Learn More Button */}
+            <button className="font-nunito bg-black text-white text-base sm:text-lg font-semibold px-10 sm:px-12 py-2.5 sm:py-3 rounded-full border-2 border-black transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:bg-gray-900 whitespace-nowrap">
               Learn More
             </button>
 
-            <button className="group flex items-center justify-center gap-2 sm:gap-3 cursor-pointer border-2 sm:border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-base sm:text-lg md:text-[20px] leading-[100%] px-4 sm:px-6 py-3 sm:py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:scale-[1.02] hover:-translate-y-1">
-              <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#000000] transition-all duration-300 group-hover:bg-white">
-                <Play className="w-5 h-5 sm:w-7 sm:h-7 fill-white transition-all duration-300 group-hover:fill-[#000000]" />
+            {/* Watch Videos Button */}
+            <button className="font-nunito group flex items-center justify-center gap-1.5 border-2 border-[#D11417] text-black font-semibold text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-2 rounded-full transition-all duration-300 hover:bg-[#D11417] hover:border-[#D11417] hover:scale-105 hover:shadow-xl whitespace-nowrap">
+              <div className="flex items-center justify-center w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-black transition-all duration-300 group-hover:bg-white flex-shrink-0">
+                <Play className="w-4 h-4 sm:w-6 sm:h-6 fill-white stroke-white transition-all duration-300 group-hover:fill-[#D11417] group-hover:stroke-[#D11417]" />
               </div>
-              Watch Videos
+              <span className="group-hover:text-white transition-colors duration-300">
+                Watch Videos
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden lg:grid max-w-7xl mx-auto px-4 sm:px-6 grid-cols-2 gap-12 items-center relative z-10">
+        {/* Left Section - Images */}
+        <div
+          ref={imageRef}
+          className="relative mx-0 ml-20 -mt-30 w-[430px] h-[430px]"
+        >
+          <Image
+            src="/Group 69.png"
+            alt="Child Initiative"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+
+        {/* Right Section - Text Content */}
+        <div className="space-y-8 text-left">
+          <p className="uppercase text-gray-400 text-[18px] tracking-[0.3em] font-normal">
+            C S R
+          </p>
+
+          <h2 className="text-[40px] font-bold text-black leading-[100%] tracking-normal" style={{ fontFamily: 'Open Sans' }}>
+            Join our initiatives
+          </h2>
+
+          <p className="text-gray-600 text-[20px] font-nunito leading-[140%] tracking-normal max-w-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Sed do eiusmod tempor.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex gap-4 pt-4">
+            {/* Learn More Button */}
+            <button className="font-nunito bg-black text-white text-xl px-16 py-4 rounded-full font-semibold border-2 border-black transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:bg-gray-900">
+              Learn More
+            </button>
+
+            {/* Watch Videos Button */}
+            <button className="font-nunito group flex items-center justify-center gap-3 border-[3px] border-[#D11417] text-black font-bold text-xl px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-[#D11417] hover:border-[#D11417] hover:scale-105 hover:shadow-xl">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-black transition-all duration-300 group-hover:bg-white">
+                <Play className="w-6 h-6 fill-white stroke-white transition-all duration-300 group-hover:fill-[#D11417] group-hover:stroke-[#D11417]" />
+              </div>
+              <span className="group-hover:text-white transition-colors duration-300">
+                Watch Videos
+              </span>
             </button>
           </div>
         </div>

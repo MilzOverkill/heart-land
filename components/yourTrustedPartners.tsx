@@ -36,13 +36,13 @@ React.useEffect(() => {
       Our Trusted Partners
     </h2>
 
-    <div className="flex justify-center mb-8 md:mb-10 px-0 sm:px-2 md:px-4">
+    <div className="flex justify-center mb-8 md:mb-10 -mx-8 sm:-mx-4 md:mx-0 md:px-4">
       <Image
         src="/Group 68.png"
         alt="partners"
         width={1900}
         height={1000}
-        className="object-contain w-[120%] sm:w-[110%] md:w-full md:max-w-[1900px]"
+        className="object-contain w-[220%] sm:w-[200%] md:w-full md:max-w-[1900px]"
       />
     </div>
   </div>
@@ -51,23 +51,25 @@ React.useEffect(() => {
 
 
         {/* About Section   */}
-        <div className="mx-auto mb-0 mt-5 md:mt-20 max-w-[1100px] px-6 md:px-8 text-center lg:text-left">
+        <div className="mx-auto mb-0 mt-5 md:mt-20 max-w-[1100px] px-4 md:px-8 text-center lg:text-left">
 
-          <p className="text-[#6D7D7D] text-sm sm:text-base md:text-lg lg:text-sm tracking-widest uppercase mb-3">
+          <p className="text-[#6D7D7D] text-[16px] sm:text-base md:text-lg lg:text-sm tracking-[0.4rem] uppercase mb-5 mt-8">
             About
           </p>
 
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-tight mb-4">
+          <h3 className="text-[20px] sm:text-3xl md:text-4xl font-bold text-black leading-normal mb-4 tracking-wide">
             Your Trusted Partner in Sri Lankan Food Distribution
           </h3>
 
-          <p className="text-gray-700 text-base sm:text-lg md:text-xl mt-5 mb-6 lg:mb-0 leading-relaxed">
-            <span className="font-semibold text-black">
+          <p className="text-[#6A6969] text-center text-[15px] sm:text-lg md:text-xl mt-5 mb-6 lg:mb-0 leading-relaxed -tracking-normal">
+            <span className="font-semibold text-[#6A6969]">
               Heartland General Trading Co. LLC
             </span>{" "}
-            is a leading importer and distributor of premium Sri Lankan food
-            products in the UAE. Based in Dubai, we connect authentic Sri Lankan
-            flavors with global markets through trusted partnerships and modern logistics.
+            <span className="font-light lg:font-normal">
+              is a leading importer and distributor of premium Sri Lankan food
+              products in the UAE. Based in Dubai, we connect authentic Sri Lankan
+              flavors with global markets through trusted partnerships and modern logistics.
+            </span>
           </p>
 
           {/* Read More button - Mobile only */}
@@ -75,7 +77,7 @@ React.useEffect(() => {
             <Link href="/About">
               <button
                 type="button"
-                className="bg-[#D11417] text-white cursor-pointer px-9 py-4 rounded-full font-semibold border-2 border-[#D11417] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417]"
+                className="bg-[#D11417] text-white cursor-pointer px-6 py-2 rounded-full font-semibold border-2 border-[#D11417] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417]"
               >
                 Read More
               </button>
@@ -83,42 +85,42 @@ React.useEffect(() => {
           </div>
 
           {/* Stats section - Mobile */}
-          <div className="flex lg:hidden flex-wrap justify-center gap-8 sm:gap-12 md:gap-16 px-6 mb-10">
+          <div className="flex lg:hidden justify-center gap-8 sm:gap-12 md:gap-14 px-4 sm:px-8 mb-2">
             {/* 15+ Years Expertise */}
-            <div className="text-center">
-              <h4 className="font-normal text-[32px] sm:text-[40px] leading-tight text-black mb-2">
+            <div className="text-center flex-1">
+              <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
                 15+
               </h4>
-              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+              <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 YEARS
               </p>
-              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+              <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 EXPERTISE
               </p>
             </div>
 
             {/* 30+ Partner Brands */}
-            <div className="text-center">
-              <h4 className="font-normal text-[32px] sm:text-[40px] leading-tight text-black mb-2">
+            <div className="text-center flex-1">
+              <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
                 30+
               </h4>
-              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+              <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 PARTNER
               </p>
-              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+              <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 BRANDS
               </p>
             </div>
 
             {/* 1000+ Happy Clients */}
-            <div className="text-center">
-              <h4 className="font-normal text-[32px] sm:text-[40px] leading-tight text-black mb-2">
+            <div className="text-center flex-1">
+              <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
                 1000+
               </h4>
-              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+              <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 HAPPY
               </p>
-              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+              <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 CLIENTS
               </p>
             </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, David_Libre } from "next/font/google";
+import { Open_Sans, David_Libre, Nunito, Inter } from "next/font/google";
 import "./globals.css";
 import FadeTransition from "../components/FadeTransition";
 import Navbar from "../components/Navbar";
@@ -20,6 +20,20 @@ const davidLibre = David_Libre({
   variable: "--font-davidLibre",
 });
 
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-nunito",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
 export const metadata: Metadata = {
   title: "Heart Land",
   description: "Discover authentic Sri Lankan goods in the UAE",
@@ -27,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${openSans.variable} ${davidLibre.variable}`}>
+    <html lang="en" className={`${openSans.variable} ${davidLibre.variable} ${nunito.variable} ${inter.variable}`}>
       <body>
         <NavigationProvider>
           <Navbar />
