@@ -27,22 +27,69 @@ useEffect(() => {
   }, []);
 
   return (
-    <main className="  bg-white text-slate-900">
-      {/* About Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-30 flex flex-col md:flex-row items-center gap-12">
-        <div className="flex-1 ml-28 mb-20">
-          <p className="text-lg font-semibold text-[#BA5561] tracking-[3px] uppercase mb-2">
+    <main className="bg-white text-slate-900">
+      {/* Mobile Layout - Only visible on mobile */}
+      <section className="md:hidden">
+        {/* Top Image - Rectangle 91 - Full Width */}
+        <div className="w-full mb-8">
+          <Image
+            src="/Rectangle 91.png"
+            alt="About Hero"
+            width={400}
+            height={300}
+            className="w-full h-auto"
+          />
+        </div>
+
+        {/* Text Content - Centered */}
+        <div className="text-center mb-8 px-8">
+          <p className="text-[16px] font-semibold text-[#BA5561] tracking-[3px] uppercase mb-5" style={{ fontFamily: 'Open Sans' }}>
             A Bit
           </p>
-          <h1 className="text-4xl md:text-5xl uppercase font-bold mb-6">About Us</h1>
-          <p className="text-lg text-gray-700 mb-6">
+          <h1 className="text-[25px] uppercase font-bold mb-4 tracking-[4px]" style={{ fontFamily: 'Open Sans' }}>About Us</h1>
+          <p className="text-[14px] text-gray-700 mb-6 leading-8.5 font-nunito">
             We are a Sri Lankan-based food distributor and service partner committed to delivering quality, authenticity, and freshness. Our mission is to connect local producers with consumers and businesses through trusted partnerships and transparent supply chains. From farm to table, we ensure that every product reflects the taste, culture, and values of Sri Lanka.
           </p>
           <Link
             href="#"
             className="
-              inline-block uppercase font-semibold 
-              bg-[#D11417] text-white px-10 py-4 
+              inline-block  font-semibold text-[14px]
+              bg-[#D11417] text-white px-8 py-3
+              shadow-2xl transition-all duration-300 ease-out
+              relative overflow-hidden
+              hover:scale-[1.02] hover:shadow-xl
+              hover:-translate-y-1 transform-gpu
+            "
+            style={{
+              borderTopLeftRadius: "20px",
+              borderBottomRightRadius: "20px",
+              borderTopRightRadius: "5px",
+              borderBottomLeftRadius: "5px",
+              fontFamily: "David Libre",
+            }}
+
+          >
+            Explore More
+          </Link>
+        </div>
+      </section>
+
+      {/* Desktop/Tablet Layout - Hidden on mobile */}
+      <section className="hidden md:flex max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-20 md:mt-24 lg:mt-30 flex-col md:flex-row items-center gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+        {/* Left Content */}
+        <div className="flex-1 w-full md:max-w-[50%] lg:max-w-[45%] xl:ml-12 2xl:ml-28 mb-12 md:mb-16 lg:mb-20">
+          <p className="text-base sm:text-lg font-semibold text-[#BA5561] tracking-[3px] uppercase mb-2" style={{ fontFamily: 'Open Sans' }}>
+            A Bit
+          </p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl uppercase font-bold mb-4 md:mb-6" style={{ fontFamily: 'Open Sans' }}>About Us</h1>
+          <p className="text-[18px] sm:text-lg text-gray-700 mb-6 leading-relaxed font-nunito">
+            We are a Sri Lankan-based food distributor and service partner committed to delivering quality, authenticity, and freshness. Our mission is to connect local producers with consumers and businesses through trusted partnerships and transparent supply chains. From farm to table, we ensure that every product reflects the taste, culture, and values of Sri Lanka.
+          </p>
+          <Link
+            href="#"
+            className="
+              inline-block uppercase font-semibold text-sm sm:text-base
+              bg-[#D11417] text-white px-8 sm:px-10 py-3 sm:py-4
               shadow-2xl transition-all duration-300 ease-out
               relative overflow-hidden rounded-xl
               hover:scale-[1.02] hover:shadow-xl
@@ -58,31 +105,33 @@ useEffect(() => {
         </div>
 
         {/* Right Images with parallax */}
-        <div ref={imageRef} className="flex-1 mr-36 relative">
-          <Image
-            src="/Rectangle 88.png"
-            alt="About 1"
-            width={720}
-            height={620}
-            className="rounded-xl"
-          />
-          <Image
-            src="/Subtract.png"
-            alt="About 2"
-            width={620}
-            height={520}
-            className="rounded-xl mt-7" 
-          /> 
-          <div className="grid grid-cols-2 gap-5 absolute -bottom-16 left-0">
+        <div ref={imageRef} className="flex-1 w-full md:max-w-[50%] lg:max-w-[55%] xl:mr-12 2xl:mr-36 relative">
+          <div className="relative w-full max-w-[720px] ml-auto">
             <Image
-              src="/Rectangle 90.png"
-              alt="food 1"
-              width={290}
-              height={240}
-              className="rounded-lg -ml-14 -mb-3" 
+              src="/Rectangle 88.png"
+              alt="About 1"
+              width={720}
+              height={620}
+              className="rounded-xl w-full h-auto"
             />
-            <div className="absolute text-center ml-32 -mb-[19px] text-3xl bottom-4 left-4 bg-[#309EC4] rounded-xl text-white px-7 py-6 font-bold">
-              15+ <br />Years
+            <Image
+              src="/Subtract.png"
+              alt="About 2"
+              width={620}
+              height={520}
+              className="rounded-xl mt-5 md:mt-7 w-full max-w-[620px] h-auto"
+            />
+            <div className="absolute -bottom-12 md:-bottom-16 left-0 flex items-end gap-3 md:gap-5">
+              <Image
+                src="/Rectangle 90.png"
+                alt="food 1"
+                width={290}
+                height={240}
+                className="rounded-lg -ml-8 md:-ml-10 lg:-ml-14 -mb-2 md:-mb-3 w-[180px] sm:w-[220px] md:w-[250px] lg:w-[290px] h-auto"
+              />
+              <div className="text-center text-xl sm:text-2xl lg:text-3xl bg-[#309EC4] rounded-xl text-white px-4 sm:px-5 md:px-6 lg:px-7 py-4 sm:py-5 md:py-6 font-bold whitespace-nowrap">
+                15+ <br />Years
+              </div>
             </div>
           </div>
         </div>
