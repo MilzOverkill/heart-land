@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Open_Sans } from "next/font/google";
 import Image from "next/image";
 import { Search } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -106,7 +107,7 @@ export default function ProductsSection() {
 
 
   return Array.from(map.entries()).map(([name, count]) => ({
-    image: categoryImageMap[name] || "/categories/default.png",
+    image: categoryImageMap[name] || "/productImage1.png",
     name,
     count,
   }));
@@ -198,11 +199,12 @@ if (query.trim()) {
     </div>
 
     <button
-      onClick={() => setShowFilters(!showFilters)}
-      className="px-5 py-3 rounded-full bg-red-100"
-    >
-      <Image src="/filter.png" alt="Filter" width={18} height={18} />
-    </button>
+  onClick={() => setShowFilters(!showFilters)}
+  className="px-5 py-3 rounded-full bg-red-100 flex items-center justify-center"
+>
+  <SlidersHorizontal size={18} className="text-red-600" />
+</button>
+
   </div>
 
   {/* Filter panel inline under search bar */}
