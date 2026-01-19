@@ -108,7 +108,7 @@ export default function Founders() {
         >
           <p className="text-[16px] tracking-[0.5em] uppercase text-[#6D7D7D] mb-3">OUR FOUNDERS</p>
           <h2 className="text-[18px] font-bold mb-6 text-white">Meet Our Founders</h2>
-          <p className="text-white text-[12px] leading-[20px] ">
+          <p className="text-white text-[12px] leading-[22px] mb-10 text-center">
             At <span className="font-bold">Heartland General Trading</span>, we take pride in offering more than just quality products —
             we deliver trust, consistency, and a commitment to excellence in every partnership.
             Here&apos;s what makes us stand out in Sri Lanka&apos;s food industry
@@ -123,7 +123,7 @@ export default function Founders() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           className="flex flex-col items-center px-6"
         >
-          <div className="w-full max-w-sm relative">
+          <div className="w-[286px] relative">
             {/* Slider Container */}
             <div className="overflow-hidden">
               <div
@@ -134,19 +134,19 @@ export default function Founders() {
                   <div key={index} className="w-full flex-shrink-0">
                     <div className="relative overflow-hidden bg-black">
                       {/* Image Container */}
-                      <div className="h-[420px] w-full overflow-hidden relative rounded-2xl">
+                      <div className="h-[381px] w-[286px] overflow-hidden relative rounded-2xl">
                         <Image
                           src={founder.img}
                           alt={founder.name}
                           fill
-                          sizes="100vw"
+                          sizes="286px"
                           className="object-cover"
                           priority={index === 0}
                         />
                       </div>
 
                       {/* Info Box */}
-                      <div className="px-8 py-6 bg-white/60 text-center relative -mt-16 z-10 rounded-b-2xl backdrop-blur-sm">
+                      <div className="px-8 py-6 bg-white/60 text-center relative -mt-24 z-10 rounded-b-2xl backdrop-blur-sm">
                         <h3 className={`${openSans.className} font-bold text-[16px] text-[#000000] mb-1`}>
                           {founder.name}
                         </h3>
@@ -161,7 +161,7 @@ export default function Founders() {
             </div>
 
             {/* Dots Indicator */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-2 mt-3">
               {founders.map((_, index) => (
                 <button
                   key={index}
