@@ -17,43 +17,72 @@ export default function CommunitySection() {
   }, []);
 
   return (
-    <section className={`w-full   flex justify-center py-20 bg-white ${openSans.className}`}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-36 items-center -mt-10 md:-mt-30">
+    <>
+      {/* Desktop Layout */}
+      <section className={`hidden md:flex w-full justify-start pb-12 sm:pb-16 md:pb-25 bg-white ${openSans.className}`}>
+        <div className="flex flex-row gap-0 items-center w-full">
 
- <div className="relative w-[800px]  h-[300px] md:h-[450px] lg:h-[400px]  overflow-hidden">
-          
-     <Image
-  src="/community-hero.png"
-  alt="Community"
-  width={1200}
-  height={800}
-  className="w-full max-w-full h-full rounded-r-[200px] object-cover"
-/>
-</div>
+          {/* LEFT SIDE IMAGE */}
+          <div className="relative w-[50%] lg:w-[55%] xl:w-[806px] h-[350px] lg:h-[380px] xl:h-[407px] shrink-0">
+            <Image
+              src="/community-hero.png"
+              alt="Community"
+              fill
+              sizes="(max-width: 1024px) 50vw, 806px"
+              className="object-cover rounded-tr-[250px] rounded-br-[250px] lg:rounded-tr-[350px] lg:rounded-br-[350px] xl:rounded-tr-[400px] xl:rounded-br-[400px]"
+              priority
+            />
+          </div>
 
+          {/* TEXT */}
+          <div className="px-6 lg:px-10 xl:px-16 ml-2 lg:ml-6 xl:ml-8">
+            <h2 className={`${openSans.className} text-[36px] lg:text-[42px] xl:text-[48px] font-bold text-black mb-6 leading-tight`}>
+              Be part of our<br />community
+            </h2>
 
+            <p className="text-base lg:text-lg xl:text-[18px] text-[#000000] font-normal leading-relaxed mb-8">
+              We love what we do and we do it with passion.<br />
+              We value the experimentation of the message<br />
+              and smart incentives.
+            </p>
 
-        {/* TEXT */}
-        <div className="md:ml-24 ml-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
+            <Link href="/About">
+              <button
+                className={`${nunito.className} cursor-pointer px-10 lg:px-12 py-3.5 text-lg lg:text-xl font-bold border-2 border-[#E60012]
+                text-[#E60012] rounded-full transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1`}
+              >
+                Partner With Us
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Layout */}
+      <section className={`md:hidden w-full py-8 bg-[#F5F5F5] ${openSans.className}`}>
+        <div className="flex flex-col items-center text-center px-6">
+
+          {/* Heading */}
+          <h2 className={`${nunito.className} text-2xl font-bold text-black mb-4 leading-tight`}>
             Be part of our community
           </h2>
 
-          <p className="text-[20px] text-[#000000] font-semibold leading-7">
-            We love what we do and we do it with passion.<br />
-            We value the experimentation of the message <br />
-            and smart incentives.
+          {/* Description */}
+          <p className="text-sm text-[#000000] font-normal leading-relaxed mb-6 max-w-md">
+            We love what we do and we do it with passion. We value the experimentation of the message and smart incentives.
           </p>
 
-           <Link href="/About"> 
-          <button
-            className={`${nunito.className} cursor-pointer mt-6 px-8 py-3 text-[19px] font-bold border-2 border-[#E60012] 
-            text-[#E60012] rounded-2xl transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1`}
-          >
-            Partner With Us
-          </button></Link>
+          {/* Button */}
+          <Link href="/About">
+            <button
+              className={`${nunito.className} cursor-pointer px-6 py-1 text-base font-bold border-2 border-[#E60012]
+              text-[#E60012] bg-white rounded-full transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg`}
+            >
+              Partner with Us
+            </button>
+          </Link>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
-}  
+}
