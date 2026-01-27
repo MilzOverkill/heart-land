@@ -34,8 +34,7 @@ export default function HaveQ() {
         </h2>
 
         <p className="text-[12px] md:text-[15px] max-w-xl md:max-w-[500px] md:ml-52 mt-3 opacity-90">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          We’re here to help. Reach out anytime and our team will get back to you as soon as possible.
         </p>
       </div>
 

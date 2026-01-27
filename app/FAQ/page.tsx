@@ -1,5 +1,6 @@
 import FAQHeader from '@/components/faQheader';
 import Footer from '@/components/footer';
+import Faqs from '@/components/generalFaqs';
 import GeneralFaqs from '@/components/generalFaqs';
 import Navbar from '@/components/Navbar';
 import ProductFaqs from '@/components/productFAQs';
@@ -9,8 +10,7 @@ export default function FAQ() {
   return (
     <>
     <FAQHeader />
-    <GeneralFaqs />
-    <ProductFaqs />
+    <Faqs />
     <HaveQ />   
     </ >
   );

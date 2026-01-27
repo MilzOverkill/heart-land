@@ -100,7 +100,7 @@ useEffect(() => {
             href="#"
             className="
               inline-block uppercase font-semibold text-sm sm:text-base
-              text-[#D11417]  px-6 sm:py-4
+              text-[#D11417]  px-0 sm:py-4
                transition-all duration-300 ease-out
               relative overflow-hidden 
               hover:scale-[1.02] hover:shadow-xl

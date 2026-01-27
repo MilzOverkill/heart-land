@@ -30,7 +30,7 @@ const cards: Card[] = [
     date: "Aug 10, 2025",
     title: "Seeds of Change: Farmers Growing Beyond Boundaries",
     description:
-      "At Heartland General Trading, our mission goes far beyond distributing authentic Sri Lankan flavors; it is rooted in a deep commitment to making a lasting impact on the lives of our people. We are proud to introduce our dedicated CSR initiative, ‘Heartland ♥ Homeland,’ a long-term pledge to support the fight against cancer in Sri Lanka. Business with a Soul As a core part of this initiative, Heartland allocates a percentage of our annual profits to support vital cancer-related projects and treatment facilities across the island. We view this not as a one-time gesture, but as a serious, sustained responsibility to our homeland.",
+      "At Heartland General Trading, our mission goes far beyond distributing authentic Sri Lankan flavors; it is rooted in a deep commitment to making a lasting impact on the lives of our people. We are proud to introduce our dedicated CSR initiative, ♥ a long-term pledge to support the fight against cancer in Sri Lanka. Business with a Soul As a core part of this initiative, Heartland allocates a percentage of our annual profits to support vital cancer-related projects and treatment facilities across the island. We view this not as a one-time gesture, but as a serious, sustained responsibility to our homeland.",
   },
   {
     image: "/Frame 61 (3).png",

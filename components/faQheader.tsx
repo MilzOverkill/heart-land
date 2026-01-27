@@ -63,8 +63,8 @@ export default function FAQHeader() {
             Frequently Asked Questions
           </h2>
 
-          <p className="text-[12px] md:text-[23px] max-w-[800px] mx-auto mt-4 md:mt-8 opacity-90 leading-relaxed">
-            We are always ready to help you and answer your questions
+          <p className="text-[12px] md:text-[18px] max-w-[900px] mx-auto mt-4 md:mt-8 opacity-90 leading-relaxed">
+            Welcome to our Frequently Asked Questions (FAQ) section. Here, we aim to address common queries and provide you with the information you need about Heartland General Trading and our products. Whether you’re looking for details about our offerings, ordering process, or shipping, you’ll find answers to help guide your experience with us.
           </p>
         </div>
       </section>

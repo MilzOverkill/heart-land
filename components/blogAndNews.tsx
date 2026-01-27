@@ -42,20 +42,46 @@ export default function AboutUsPage() {
       <div className="left-content">
         {/* Title Row */}
         <div className={`title-row ${openSans.className}`}>
-          <div className="title-line"></div> 
+           
           <span className="title-text">Our</span>
-          <div className="title-line"></div>
+          <div className="title-line ml-15"></div>
         </div>
 
         {/* Subtitle */}
-        <h2 className={`subtitle ${nunito.className}`}>Featured insights and articles</h2>
+        <h2 className={`subtitle ${nunito.className}`}>Featured insights andResources & Insights | 
+          <br /> Featured Insights & Articles articles</h2>
 
         {/* Body Text */}
-        <p className={`body-text ${openSans.className}`}>
-  {isMobile
-    ? `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint `
-    : `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
-</p>
+        <div className={`body-text ${openSans.className}`}>
+  {isMobile ? (
+    <p>
+      Welcome to our Featured Insights and Articles section, where we provide
+      valuable perspectives on industry trends, culinary traditions, and
+      community initiatives. Our articles cover market developments and showcase
+      recipes that celebrate Sri Lankan flavors, aimed at informing and
+      inspiring you. Explore our latest content to understand our commitment to
+      social responsibility and our connections within the Sri Lankan community.
+      Join us on this journey of discovery.
+    </p>
+  ) : (
+    <>
+      <p className="mb-4 mt-6 tracking-10">
+        Welcome to our Featured Insights and Articles section, where we provide
+        valuable perspectives on industry trends, culinary traditions, and
+        community initiatives. Our articles cover market developments and
+        showcase recipes that celebrate Sri Lankan flavors, aimed at informing
+        and inspiring you.
+      </p>
+
+      <p>
+        Explore our latest content to understand our commitment to social
+        responsibility and our connections within the Sri Lankan community.
+        Join us on this journey of discovery.
+      </p>
+    </>
+  )}
+</div>
+
 
         {/* CTA Button */}
         <button
@@ -159,7 +185,7 @@ export default function AboutUsPage() {
         }
 
         .title-line {
-        width: 105px;              /* 🔥 THIS increases the line length */
+        width: 70px;              /* 🔥 THIS increases the line length */
         height: 1px;
         background-color: #ed632f;
 }
@@ -176,9 +202,9 @@ export default function AboutUsPage() {
         }
 
         .body-text {
-          width: ${isMobile ? "100%" : "325px"};
+          width: ${isMobile ? "100%" : "550px"};
           font-weight: 400;
-          font-size: 18px;
+          font-size: 17px;
           line-height: 160%;
           color: #686868;
           margin-bottom: 24px;
