@@ -2,7 +2,7 @@
 
 
 import { Nunito } from "next/font/google";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "600", "700"], display: "swap" });
 
@@ -142,22 +142,38 @@ export default function ContactGetInTouch() {
             </div>
             
             <div className="pt-2 pb-4 mt-10">
-              <p className="text-white text-xs font-bold mb-5">Follow Us</p>
-              <div className="flex gap-5 justify-center">
-                <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                  <FaFacebookF className="w-4 h-4 text-black" />
-                </a>
-                <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                  <FaTwitter className="w-4 h-4 text-black" />
-                </a>
-                <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                  <FaInstagram className="w-4 h-4 text-black" />
-                </a>
-                <a href="#" className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                  <FaYoutube className="w-4 h-4 text-black" />
-                </a>
-              </div>
-            </div>
+  <p className="text-white text-xs font-bold mb-5">Follow Us</p>
+  <div className="flex gap-5 justify-center">
+    <a
+      href="#"
+      className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+    >
+      <Facebook size={16} className="text-black" />
+    </a>
+
+    <a
+      href="#"
+      className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+    >
+      <Twitter size={16} className="text-black" />
+    </a>
+
+    <a
+      href="#"
+      className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+    >
+      <Instagram size={16} className="text-black" />
+    </a>
+
+    <a
+      href="#"
+      className="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+    >
+      <Youtube size={16} className="text-black" />
+    </a>
+  </div>
+</div>
+
           </div>
         </div>
       </div>

@@ -46,9 +46,14 @@ useEffect(() => {
           <p className="text-[16px] font-semibold text-[#BA5561] tracking-[3px] uppercase mb-5" style={{ fontFamily: 'Open Sans' }}>
             A Bit
           </p>
-          <h1 className="text-[25px] uppercase font-bold mb-4 tracking-[4px]" style={{ fontFamily: 'Open Sans' }}>About Us</h1>
+          <h1 className="text-[25px] font-bold mb-4 tracking-[4px]" style={{ fontFamily: 'Open Sans' }}>A 25-Year Legacy of Authenticity</h1>
           <p className="text-[14px] text-gray-700 mb-6 leading-8.5 font-nunito">
-            We are a Sri Lankan-based food distributor and service partner committed to delivering quality, authenticity, and freshness. Our mission is to connect local producers with consumers and businesses through trusted partnerships and transparent supply chains. From farm to table, we ensure that every product reflects the taste, culture, and values of Sri Lanka.
+            Welcome to Heartland General Trading Co LLC, your premier gateway to the authentic  
+            flavors of Sri Lanka in the UAE. Established in 2001 by entrepreneur Mohamed Fazal  
+            Mawjood, we are proud to have served our community for over 25 years. From our humble  
+            beginnings to becoming a household name, we offer a masterfully curated selection of spices,  
+            premium rice varieties, condiments, snacks, and more.  
+
           </p>
           <Link
             href="#"
@@ -81,26 +86,32 @@ useEffect(() => {
           <p className="text-base sm:text-lg font-semibold text-[#BA5561] tracking-[3px] uppercase mb-2" style={{ fontFamily: 'Open Sans' }}>
             A Bit
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl uppercase font-bold mb-4 md:mb-6" style={{ fontFamily: 'Open Sans' }}>About Us</h1>
-          <p className="text-[18px] sm:text-lg text-gray-700 mb-6 leading-relaxed font-nunito">
-            We are a Sri Lankan-based food distributor and service partner committed to delivering quality, authenticity, and freshness. Our mission is to connect local producers with consumers and businesses through trusted partnerships and transparent supply chains. From farm to table, we ensure that every product reflects the taste, culture, and values of Sri Lanka.
+          <h1 className="text-[18px] sm:text-xl lg:text-5xl tracking-[5px] leading-16 font-bold mb-4 md:mb-6" style={{ fontFamily: 'Open Sans' }}>
+            A 25-Year Legacy of Authenticity</h1>
+          <p className="text-[15px] sm:text-lg text-gray-700 mb-6 leading-relaxed font-nunito">
+           Welcome to Heartland General Trading Co LLC, your premier gateway to the authentic  
+           flavors of Sri Lanka in the UAE. Established in 2001 by entrepreneur Mohamed Fazal  
+           Mawjood, we are proud to have served our community for over 25 years. From our humble 
+            beginnings to becoming a household name, we offer a masterfully curated selection of spices, 
+             premium rice varieties, condiments, snacks, and more.  
+
           </p>
           <Link
             href="#"
             className="
               inline-block uppercase font-semibold text-sm sm:text-base
-              bg-[#D11417] text-white px-8 sm:px-10 py-3 sm:py-4
-              shadow-2xl transition-all duration-300 ease-out
-              relative overflow-hidden rounded-xl
+              text-[#D11417]  px-6 sm:py-4
+               transition-all duration-300 ease-out
+              relative overflow-hidden 
               hover:scale-[1.02] hover:shadow-xl
-              hover:-translate-y-1 transform-gpu
+              hover:-translate-y-1 transform-gpu tracking-widest
             "
             style={{
               clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
               borderBottomRightRadius: "10px",
             }}
           >
-            Explore More
+          Explore More &gt;&gt;
           </Link>
         </div>
 
@@ -123,15 +134,29 @@ useEffect(() => {
             />
             <div className="absolute -bottom-12 md:-bottom-16 left-0 flex items-end gap-3 md:gap-5">
               <Image
-                src="/Rectangle 90.png"
-                alt="food 1"
-                width={290}
-                height={240}
-                className="rounded-lg -ml-8 md:-ml-10 lg:-ml-14 -mb-2 md:-mb-3 w-[180px] sm:w-[220px] md:w-[250px] lg:w-[290px] h-auto"
-              />
-              <div className="text-center text-xl sm:text-2xl lg:text-3xl bg-[#309EC4] rounded-xl text-white px-4 sm:px-5 md:px-6 lg:px-7 py-4 sm:py-5 md:py-6 font-bold whitespace-nowrap">
-                15+ <br />Years
-              </div>
+  src="/Rectangle 90.png"
+  alt="food 1"
+  width={250}
+  height={210}
+  className="
+    rounded-lg
+    -ml-8 md:-ml-10 lg:-ml-14
+    -mb-2 md:-mb-3
+    w-[180px] sm:w-[220px] md:w-[220px] lg:w-[240px]
+    h-auto
+  "
+/>
+
+  <div>
+  <Image
+    src="/25years.png"
+    alt="25 Years Experience"
+    width={170}
+    height={170}
+    className="object-contain -ml-3 sm:-ml-4 md:-ml-3"
+  />
+</div>
+
             </div>
           </div>
         </div>
