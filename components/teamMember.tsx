@@ -88,7 +88,7 @@ export default function TeamMembers() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8">Our Team Members</h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-            Our diverse team of professionals brings together expertise in food technology, marketing, logistics, and sustainability — all united by a common purpose:
+            Our dedicated team at Heartland General Trading is committed to delivering the best Sri  Lankan food products. With a blend of expertise and a shared passion for quality, we strive to  enhance the culinary experience for our customers
           </p>
         </motion.div>
 
