@@ -43,7 +43,7 @@ export default function ContactHeader() {
 
   <div className="flex items-center gap-4 sm:gap-5 md:gap-6">
     <a
-      href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+      href="https://web.facebook.com/HeartlandGeneralTrading"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -57,7 +57,7 @@ export default function ContactHeader() {
     </a>
 
     <a
-      href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+      href="https://www.instagram.com/heartlandgeneral/"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -65,7 +65,7 @@ export default function ContactHeader() {
     </a>
 
     <a
-      href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+      href="https://web.facebook.com/HeartlandGeneralTrading"
       target="_blank"
       rel="noopener noreferrer"
     >

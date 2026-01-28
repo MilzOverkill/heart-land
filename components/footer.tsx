@@ -99,17 +99,17 @@ export default function Footer() {
                 <FaFacebookF className="text-white" size={10} />
               </a>
 
-              <a
+              {/* <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
               >
                 <FaTwitter className="text-white" size={10} />
-              </a>
+              </a> */}
 
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/heartlandgeneral/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
@@ -164,7 +164,7 @@ export default function Footer() {
 
               <div className="flex gap-4 md:gap-6 text-sm mt-4 cursor-pointer">
                 <a href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#">Facebook</a>
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/heartlandgeneral/">Instagram</a>
                 <a href="#">LinkedIn</a>
               </div>
             </div>

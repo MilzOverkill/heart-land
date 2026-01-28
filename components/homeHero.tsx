@@ -99,7 +99,7 @@ useEffect(() => {
       <div className="h-px bg-slate-200 flex-1"></div>
       <div className="flex gap-3 items-center">
         <a
-          href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+          href="https://web.facebook.com/HeartlandGeneralTrading"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -112,7 +112,7 @@ useEffect(() => {
           />
         </a>
         <a
-          href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+          href="https://www.instagram.com/heartlandgeneral/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -125,12 +125,12 @@ useEffect(() => {
           />
         </a>
         <a
-          href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+          href="https://web.facebook.com/HeartlandGeneralTrading"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
-            src="/Facebook (2).png"
+            src="/youtube.png"
             alt="Youtube"
             width={40}
             height={40}
@@ -204,7 +204,7 @@ useEffect(() => {
               <div className="flex items-center gap-4 mt-8">
                 <div className="flex gap-3 items-center">
                   <a
-                    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+                    href="https://web.facebook.com/HeartlandGeneralTrading"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -218,7 +218,7 @@ useEffect(() => {
                   </a>
 
                   <a
-                    href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+                    href="https://www.instagram.com/heartlandgeneral/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -236,7 +236,7 @@ useEffect(() => {
                     rel="noopener noreferrer"
                   >
                     <Image
-                      src="/Facebook (2).png"
+                      src="/youtube.png"
                       alt="Youtube"
                       width={40}
                       height={40}
