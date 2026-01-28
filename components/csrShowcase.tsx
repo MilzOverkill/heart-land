@@ -86,7 +86,7 @@ export default function CsrShowcase() {
           className="relative left-2 overflow-hidden"
           style={{ gridColumn: "5 / 6", gridRow: "1 / 2", transform: parallax(0.05) }}
         >
-          <Image src="/gallery.png" alt="" width={240} height={240} className="rounded-lg object-cover mt-8" />
+          <Image src="/gallery.png" alt="" width={240} height={240} className="rounded-lg object-cover mt-8 " />
           <p className={`${newsReader.className} absolute text-center items-center left-14 top-22 text-[#2E2E2E] px-3 py-1 rounded text-[30px] font-bold`}>
             Gallery
           </p>

@@ -15,23 +15,34 @@ const openSans = Open_Sans({
 
 export default function OurProjects() {
   return (
-    <section className="w-full bg-white py-14 md:py-20">
+    <section className="w-full bg-white py-2 md:py-6">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-14">
           {/* LEFT */}
           <div className="text-left">
-            <h2 className={`${nunito.className} text-[22px] sm:text-[22px] md:text-[26px] font-semibold text-black`}>
+            <h2 className={`${nunito.className} text-[22px] sm:text-[25px] md:text-[40px] font-semibold text-black mb-12`}>
               Our CSR Initiative
             </h2>
 
-            <p className={`${openSans.className} mt-4 text-[17px] text-black sm:text-[18px] md:text-[20px]
-               leading-[22px] md:leading-7 w-[800px]  max-w-[620px]`}>
-              Through our signature Corporate Social Responsibility (CSR) initiative, “Heartland 
-              <span className="text-[#D11417] font-semibold"> ♥ </span>
-               Homeland,” we allocate a portion of our annual profits to support vital cancer-related projects in Sri Lanka.
-              This initiative reinforces the deep-rooted ties between our operations in the UAE and the well-being
-              of families back home.
-            </p>
+            <div className="flex items-start gap-4 mt-1">
+              {/* Red Vertical Bar */}
+              <div
+                className="hidden md:block shrink-0 self-stretch rounded-[30px]"
+                style={{
+                  width: "20px",
+                  backgroundColor: "#D11417",
+                }}
+              />
+
+              <p className={`${openSans.className} text-[17px] text-black sm:text-[18px] md:text-[20px]
+                 leading-[22px] md:leading-7 md:min-w-[550px]`}>
+                Through our signature Corporate Social Responsibility (CSR) initiative, &ldquo;Heartland
+                <span className="text-[#D11417] font-semibold"> ♥ </span>
+                 Homeland,&rdquo; we allocate a portion of our annual profits to support vital cancer-related projects in Sri Lanka.
+                This initiative reinforces the deep-rooted ties between our operations in the UAE and the well-being
+                of families back home.
+              </p>
+            </div>
           </div>
 
           {/* RIGHT */}
