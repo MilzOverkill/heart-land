@@ -2,6 +2,7 @@ import BlogAndNews from '@/components/blogAndNews';
 import SuccessStory from '@/components/successStory';
 import LatestNews from '@/components/latestNews';
 import BlogCards from '@/components/blogCards';
+import CommunityPillar from '@/components/CommunityPillar';
 
 
 export default function Resources() {
@@ -9,8 +10,9 @@ export default function Resources() {
     <>
     <BlogAndNews />
     <SuccessStory />
-    <LatestNews />
-    <BlogCards />
+    {/* <LatestNews />
+    <BlogCards /> */}
+    <CommunityPillar/>
     </ >
 
     
