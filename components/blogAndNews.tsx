@@ -2,30 +2,19 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { Nunito, Open_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-});
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
 
 export default function AboutUsPage() {
   const router = useRouter();
 
   const [offsetY, setOffsetY] = useState(0);
-  const [isMobile, setIsMobile] = useState(false); // Track mobile
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.pageYOffset);
-    const handleResize = () => setIsMobile(window.innerWidth < 768); // Mobile breakpoint
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
@@ -36,303 +25,106 @@ export default function AboutUsPage() {
   }, []);
 
   return (
-    <div className="about-container">
+    <div className="max-w-[1240px] mx-auto px-6 md:px-[30px] py-4 md:py-[60px] pb-4 md:pb-8 flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-15 bg-white">
 
-      {/* Left content: Title, subtitle, body, button */}
-      <div className="left-content">
+      {/* Left content */}
+      <div className="w-full md:w-[594px] flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
+
         {/* Title Row */}
-        <div className={`title-row ${openSans.className}`}>
-           
-          <span className="title-text">Our</span>
-          <div className="title-line ml-15"></div>
+        <div className="inline-flex items-center justify-center gap-8 font-openSans mb-3">
+          <span className="font-normal text-lg leading-[160%] text-[#ED632F]">Our</span>
+          <div className="w-[70px] h-px bg-[#ED632F] ml-2" />
         </div>
 
         {/* Subtitle */}
-        <h2 className={`subtitle ${nunito.className}`}>Featured insights andResources & Insights | 
-          <br /> Featured Insights & Articles articles</h2>
+        <h2 className="w-full md:w-[242px] font-nunito font-semibold text-[30px] leading-[140%] text-[#10111a] mb-8 whitespace-nowrap">
+          Featured Insights & Articles
+        </h2>
 
         {/* Body Text */}
-        <div className={`body-text ${openSans.className}`}>
-  {isMobile ? (
-    <p>
-      Welcome to our Featured Insights and Articles section, where we provide
-      valuable perspectives on industry trends, culinary traditions, and
-      community initiatives. Our articles cover market developments and showcase
-      recipes that celebrate Sri Lankan flavors, aimed at informing and
-      inspiring you. Explore our latest content to understand our commitment to
-      social responsibility and our connections within the Sri Lankan community.
-      Join us on this journey of discovery.
-    </p>
-  ) : (
-    <>
-      <p className="mb-4 mt-6 tracking-10">
-        Welcome to our Featured Insights and Articles section, where we provide
-        valuable perspectives on industry trends, culinary traditions, and
-        community initiatives. Our articles cover market developments and
-        showcase recipes that celebrate Sri Lankan flavors, aimed at informing
-        and inspiring you.
-      </p>
-
-      <p>
-        Explore our latest content to understand our commitment to social
-        responsibility and our connections within the Sri Lankan community.
-        Join us on this journey of discovery.
-      </p>
-    </>
-  )}
-</div>
-
+        <div className="w-full md:w-[550px] font-openSans font-normal text-[18px] leading-[160%] text-[#686868] mb-4">
+          {isMobile ? (
+            <p>
+              Welcome to our Featured Insights and Articles section, where we provide
+              valuable perspectives on industry trends, culinary traditions, and
+              community initiatives. Our articles cover market developments and showcase
+              recipes that celebrate Sri Lankan flavors, aimed at informing and
+              inspiring you. Explore our latest content to understand our commitment to
+              social responsibility and our connections within the Sri Lankan community.
+              Join us on this journey of discovery.
+            </p>
+          ) : (
+            <>
+              <p className="mb-4 mt-6 tracking-wide">
+                Welcome to our Featured Insights and Articles section, where we provide
+                valuable perspectives on industry trends, culinary traditions, and
+                community initiatives. Our articles cover market developments and
+                showcase recipes that celebrate Sri Lankan flavors, aimed at informing
+                and inspiring you.
+              </p>
+              <p>
+                Explore our latest content to understand our commitment to social
+                responsibility and our connections within the Sri Lankan community.
+                Join us on this journey of discovery.
+              </p>
+            </>
+          )}
+        </div>
 
         {/* CTA Button */}
-        <button
-          className={`cta-button ${nunito.className} ${isMobile ? "mobile-cta" : ""}`}
+        {/* <button
+          className={`w-[154px] h-11 ${isMobile ? 'bg-[#FF0000] mx-auto' : 'bg-[#0062ce]'} rounded-lg px-4 py-0.5 flex items-center justify-between border-none cursor-pointer shadow-[0px_4px_4px_-2px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-[0px_8px_16px_rgba(0,98,206,0.3)] mt-2 font-nunito`}
           onClick={() => router.push("/About")}
         >
-          <span className="cta-text">Know More</span>
-          <span className="cta-icon-wrapper">
+          <span className="font-semibold text-xs leading-[150%] text-white text-center">Know More</span>
+          <span className="w-[30px] h-[30px] bg-white rounded-full flex items-center justify-center p-2.5">
             <Image
-  src={isMobile ? "/Arrow.png" : "/Arrow1.png"}
-  alt="arrow"
-  width={14}
-  height={14}
-/>
-
+              src={isMobile ? "/Arrow.png" : "/Arrow1.png"}
+              alt="arrow"
+              width={14}
+              height={14}
+            />
           </span>
-        </button>
+        </button> */}
       </div>
 
       {/* Right Image Section with Parallax */}
-      <div className="right-content mobile-top-image">
+      <div className="flex-1 flex justify-center md:justify-end items-center w-full order-1 md:order-2">
         <div
-          className="main-image-wrapper"
+          className="w-full md:w-[680px] h-[260px] md:h-[580px] relative transition-transform duration-100 ease-out md:mt-0 -mt-2.5"
           style={{
-            transform: isMobile ? "none" : `translateY(${offsetY * 0.2}px)`, // Parallax disabled on mobile
+            transform: isMobile ? "none" : `translateY(${offsetY * 0.2}px)`,
           }}
         >
-         <Image
-  src="/Group20.png"
-  alt="Main"
-  sizes="(max-width: 768px) 100vw, 600px"
-  fill
-  priority
-  style={{ objectFit: "contain" }}
-/>
+          <Image
+            src="/Group20.png"
+            alt="Main"
+            sizes="(max-width: 650px) 100vw, 600px"
+            fill
+            priority
+            className="object-contain"
+          />
 
-      {/* MOBILE SIDE IMAGE – LEFT BELOW MAIN */}
-<div className="mobile-side-img left-side">
-  <Image
-    src="/Union.png"        // your left image
-    alt="side left"
-    fill
-    style={{ objectFit: "cover" }}
-  />
-</div>
+          {/* Mobile Side Images */}
+          <div className="hidden max-md:block absolute w-[110px] h-[105px] -left-[30px] -bottom-[105px] rounded-[18px] overflow-hidden z-[5]">
+            <Image
+              src="/Union.png"
+              alt="side left"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-{/* MOBILE SIDE IMAGE – RIGHT ABOVE BUTTON */}
-<div className="mobile-side-img right-side">
-  <Image
-    src="/Union1.png"        // your right image
-    alt="side right"
-    fill
-    style={{ objectFit: "cover" }}
-  />
-</div>
-    
+          <div className="hidden max-md:block absolute w-[100px] h-[90px] -right-[30px] -bottom-[380px] rounded-[18px] overflow-hidden z-[5]">
+            <Image
+              src="/Union1.png"
+              alt="side right"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
-
-      <style jsx>{`
-        /* CONTAINER */
-        .about-container {
-          max-width: 1240px;
-          margin: 0 auto;
-          padding: 60px 50px;
-          min-height: 100vh;
-          display: flex;
-          gap: 20px;
-          box-sizing: border-box;
-          background: #ffffff;
-
-          /* Mobile layout */
-          flex-direction: ${isMobile ? "column" : "row"};
-          align-items: ${isMobile ? "center" : "flex-start"};
-        }
-
-        /* LEFT CONTENT */
-        .left-content {
-          width: ${isMobile ? "100%" : "594px"};
-          display: flex;
-          flex-direction: column;
-          align-items: ${isMobile ? "center" : "flex-start"};
-          text-align: ${isMobile ? "center" : "left"};
-        }
-
-        .title-row {
-         
-       width: auto;               /* let content control width */
-       display: inline-flex;     /* shrink to fit content */
-       align-items: center;
-       justify-content: center;
-       gap: 6px;                 /* keep text tight */
-}   
-        
-
-        .title-text {
-          font-weight: 400;
-          font-size: 18px;
-          line-height: 160%;
-          color: #ed632f;
-        }
-
-        .title-line {
-        width: 70px;              /* 🔥 THIS increases the line length */
-        height: 1px;
-        background-color: #ed632f;
-}
-
-        .subtitle {
-          width: ${isMobile ? "100%" : "242px"};
-          font-weight: 600;
-          font-size: 30px;
-          line-height: 140%;
-          color: #10111a;
-          margin-bottom: 20px;
-          white-space: nowrap;
-          
-        }
-
-        .body-text {
-          width: ${isMobile ? "100%" : "550px"};
-          font-weight: 400;
-          font-size: 17px;
-          line-height: 160%;
-          color: #686868;
-          margin-bottom: 24px;
-        }
-
-        /* CTA BUTTON */
-        .cta-button {
-          width: 154px;
-          height: 44px;
-          background: #0062ce; /* default desktop color */
-          border-radius: 8px;
-          padding: 2px 15px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          border: none;
-          cursor: pointer;
-          box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.2);
-          transition: all 0.3s ease-out;
-          transform: scale(1);
-          margin-top: 10px;
-        }
-
-        .cta-button:hover {
-          transform: scale(1.02) translateY(-4px);
-          box-shadow: 0px 8px 16px rgba(0, 98, 206, 0.3);
-        }
-
-        .cta-text {
-          font-weight: 600;
-          font-size: 12px;
-          line-height: 150%;
-          color: #ffffff;
-          text-align: center;
-        }
-
-        .cta-icon-wrapper {
-          width: 30px;
-          height: 30px;
-          background: #ffffff;
-          border-radius: 69.77px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 10px;
-        }
-
-        /* Mobile CTA overrides */
-        .mobile-cta {
-          background: #FF0000; /* red on mobile */
-          margin: 0 auto; /* center button */
-        }
-
-        .right-content {
-  flex: 1;
-  display: flex;
-  justify-content: ${isMobile ? "center" : "flex-start"};
-  align-items: center;               /* FIX */
-  padding-left: ${isMobile ? "0" : "20px"};
-  margin-top: ${isMobile ? "0px" : "0"};
-  width: 100%;                      /* FIX */
-}
-
-
-      .main-image-wrapper {
-  width: ${isMobile ? "100%" : "600px"};
-  height: ${isMobile ? "260px" : "505.58px"};
-  position: relative;
-  display: block;                  /* FIX */
-  margin: ${isMobile ? "0 auto" : "0 100px 0 0"};
-  transition: transform 0.1s ease-out;
-}
-
-/* MOBILE IMAGE ON TOP ONLY */
-@media (max-width: 767px) {
-  .left-content {
-    order: 2;
-  }
-
-  .right-content {
-    order: 1;
-  }
-    .about-container {
-    padding-top: 10px;   /* ✅ bring everything up */
-  }
-
-  .main-image-wrapper {
-    margin-top: -10px;   /* ✅ lift image to top visually */
-  }
-
-}
-
-/* SIDE IMAGES - hidden on desktop */
-.mobile-side-img {
-  display: none;
-  position: absolute;
-  border-radius: 18px;
-  overflow: hidden;
-  z-index: 5;
-}
-
-/* MOBILE ONLY SIDE IMAGES */
-@media (max-width: 767px) {
-
-  .mobile-side-img {
-    display: block;
-  }
-
-  /* LEFT small image - below main image */
-  .mobile-side-img.left-side {
-    width: 110px;
-    height: 105px;
-    left: -30px;
-    bottom: -105px;
-  }
-
-  /* RIGHT small image - above red button */
-  .mobile-side-img.right-side {
-    width: 100px;
-    height: 90px;
-    right: -30px;
-    bottom: -380px;
-  }
-}
-
-
-
-      `}</style>
     </div>
   );
 }
