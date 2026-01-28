@@ -33,7 +33,7 @@ React.useEffect(() => {
   {/* Content */}
   <div className="text-center px-4">
     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 md:mb-8">
-      Our Trusted Partners
+      The Heartland B2B Network
     </h2>
 
     <div className="flex justify-center mb-8 md:mb-10 -mx-8 sm:-mx-4 md:mx-0 md:px-4">
@@ -54,18 +54,19 @@ React.useEffect(() => {
         <div className="mx-auto mb-0 mt-5 md:mt-20 max-w-[1100px] px-4 md:px-8 text-center lg:text-left">
 
           <p className="text-[#6D7D7D] text-[16px] sm:text-base md:text-lg lg:text-sm tracking-[0.4rem] uppercase mb-5 mt-8">
-            About
+            Our Retail Partners
           </p>
 
           <h3 className="text-[20px] sm:text-3xl md:text-4xl font-bold text-black leading-normal mb-4 tracking-wide">
-            Your Trusted Partner in Sri Lankan Food Distribution
+            Available Across All Major Hypermarkets
           </h3>
 
           <p className=" text-left text-[15px] sm:text-lg md:text-xl mt-5 mb-6 lg:mb-0 leading-relaxed -tracking-normal">
-            
+
             <span className="font-light lg:font-normal">
-              At Heartland General Trading, every product in our growing range is a testament to our  dedication to 
-              authenticity and flavor. We invite you to explore the essence of Sri Lanka with  us.
+              Our operational excellence and ISO/HACCP certifications have made us the trusted partner
+              for the UAE&apos;s leading retail giants. Find our products at Nesto, Al Maya, West Zone,
+              Talal, Madina, Passons, Safari, and Baqer Mohebi.
             </span>
           </p>
 
@@ -83,7 +84,7 @@ React.useEffect(() => {
 
           {/* Stats section - Mobile */}
           <div className="flex lg:hidden justify-center gap-8 sm:gap-12 md:gap-14 px-4 sm:px-8 mb-2">
-            {/* 15+ Years Expertise */}
+            {/* 25 Years Expertise */}
             <div className="text-center flex-1">
               <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
                 25
@@ -92,33 +93,33 @@ React.useEffect(() => {
                 YEARS
               </p>
               <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
-                EXPERTISE
+                TRUSTED
               </p>
             </div>
 
-            {/* 30+ Partner Brands */}
+            {/* 8+ Retail Chains */}
             <div className="text-center flex-1">
               <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
-                30+
+                8+
               </h4>
               <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
-                PARTNER
+                RETAIL
               </p>
               <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
-                BRANDS
+                CHAINS
               </p>
             </div>
 
-            {/* 1000+ Happy Clients */}
+            {/* ISO Certified */}
             <div className="text-center flex-1">
               <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
-                1000+
+                ISO
               </h4>
               <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
-                HAPPY
+                HACCP
               </p>
               <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
-                CLIENTS
+                CERTIFIED
               </p>
             </div>
           </div>
@@ -177,7 +178,7 @@ React.useEffect(() => {
   {/* Stats section - Desktop */}
 <div className="relative lg:absolute lg:top-[400px] lg:right-0 w-full lg:max-w-[700px] flex flex-wrap justify-center lg:justify-end gap-8 sm:gap-12 lg:gap-16 px-6 mt-8 lg:mt-0">
 
-  {/* 15+ Years Expertise */}
+  {/* 25 Years Trusted */}
 <div className="text-center lg:text-left">
   <h4
     className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
@@ -190,40 +191,40 @@ React.useEffect(() => {
     className="mt-1 font-semibold font-['Open_Sans'] text-[12px] sm:text-[14px] md:text-[16px] leading-[130%] uppercase text-[#000000]"
     style={{ letterSpacing: "90%" }}
   >
-    Y e a r s <br /> E x p e r t i s e
+    Y e a r s <br /> T r u s t e d
   </p>
 </div>
 
 
-  {/* 30+ Partner Brands */}
+  {/* 8+ Retail Chains */}
   <div className="text-center lg:text-left">
     <h4
       className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
       style={{ letterSpacing: "20%" }}
     >
-      30+
+      8+
     </h4>
     <p
       className="mt-1 font-semibold font-['Open_Sans'] text-[12px] sm:text-[14px] md:text-[16px] leading-[130%] uppercase text-[#000000]"
       style={{ letterSpacing: "43%" }}
     >
-      P a r t n e r <br /> B r a n d s
+      R e t a i l <br /> C h a i n s
     </p>
   </div>
 
-  {/* 1000+ Happy Clients */}
+  {/* ISO Certified */}
   <div className="text-center lg:text-left">
     <h4
       className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
       style={{ letterSpacing: "0%" }}
     >
-      1000+
+      ISO
     </h4>
     <p
       className="mt-1 font-semibold font-['Open_Sans'] text-[12px] sm:text-[14px] md:text-[16px] leading-[130%] uppercase text-[#000000]"
       style={{ letterSpacing: "43%" }}
     >
-      H a p p y <br /> C l i e n t s
+      H A C C P <br /> C e r t i f i e d
     </p>
   </div>
 </div>

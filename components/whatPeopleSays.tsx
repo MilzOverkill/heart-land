@@ -10,21 +10,21 @@ export default function WhatPeopleSays() {
   const cards = [
     {
       img: "/fathima.png",
-      name: "Fathima R.",
-      role: "Woman Entrepreneur, Galle",
-      text: "Heartland helped me launch my own spice brand through their Women in Food Enterprise project. I received training in packaging and export marketing and today my products are sold in Dubai. Their support has truly changed my family’s future.",
+      name: "Kelani Lanka",
+      role: "Our Premium Brand",
+      text: "Beyond our distribution services, Heartland is the proud home of Kelani Lanka, a brand synonymous with premium quality and authentic Sri Lankan taste. Kelani Lanka represents our commitment to excellence in every household.",
     },
     {
       img: "/farhan.png",
-      name: "Arjun Verma",
-      role: "CSR Volunteer",
-      text: "Heartland’s initiatives go beyond charity — they build self-reliance. I’ve seen how the clean water and nutrition programs bring real change to rural families. It’s inspiring to work with a team that believes in empowering communities, not just supporting them.",
+      name: "Maliban",
+      role: "Sole Distributor",
+      text: "The taste of Sri Lankan heritage. As the Sole Distributor for Maliban in the UAE, we bring Sri Lanka's most iconic biscuit brand to families across the region, maintaining the authentic flavors that generations have loved.",
     },
     {
       img: "/arjun.png",
-      name: "Farhan A.",
-      role: "Small-Scale Farmer, Kurunegala",
-      text: "Before joining Heartland’s farmer training program, I struggled to find consistent buyers for my crops. With their guidance, I learned modern cultivation methods and now supply directly to export channels. My income has doubled, and I feel proud to represent Sri Lankan produce globally.",
+      name: "Prima Kottumee",
+      role: "Sole Distributor",
+      text: "The island's favorite instant indulgence. As the Sole Distributor for Prima Kottumee, we ensure that this beloved Sri Lankan instant noodle brand is available to our community across all major retail outlets in the UAE.",
     },
   ];
   
@@ -55,7 +55,7 @@ export default function WhatPeopleSays() {
     <section className="w-full flex flex-col items-center py-20 bg-white">
       {/* Title */}
       <h2 className="md:text-4xl text-xl font-bold mb-12" style={{ fontFamily: "Nunito" }}>
-        What People Says About Us
+        Our Brands & Distribution Strength
       </h2>
 
       {/* Desktop Cards */}

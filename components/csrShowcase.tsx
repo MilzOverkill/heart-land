@@ -29,14 +29,14 @@ export default function CsrShowcase() {
 
       {/* Heading */}
       <h2 className={`${nunito.className} text-2xl md:text-5xl mt-15 font-bold text-center`}>
-        Building Communities Beyond Business
+        Events & Sponsorships: A Pillar of the Community
       </h2>
 
       <p className={`${nunito.className} text-center mt-14 max-w-3xl font-medium mx-auto text-[20px] leading-[29px]`}>
-        At <span className="font-extrabold">Heartland General Trading</span>, we believe true success
-        means making a difference. Our CSR efforts support Sri Lankan farmers,
-        small businesses, and communities, promoting sustainable growth that
-        benefits everyone.
+        At <span className="font-extrabold">Heartland</span>, we believe that our growth is deeply
+        intertwined with the strength of the Sri Lankan community in the UAE. For over 25 years,
+        we have served as a vital link between the island and the diaspora, fostering strong
+        connections through active collaboration and strategic sponsorships.
       </p>
 
       {/* GRID */}
@@ -48,13 +48,13 @@ export default function CsrShowcase() {
         >
           <Image src="/meronFrame 14.png" alt="" fill className="object-cover" />
           <p className={`${oswald.className} text-[40px] font-extrabold text-white absolute top-15 left-[25px]`}>
-            95%
+            25+
           </p>
           <p
             className={`${questrial.className} text-[13px] leading-[18px] text-white absolute top-[140px] left-[25px] w-[180px]`}
           >
-            We partner directly with Sri Lankan growers and small producers to ensure
-            fair trade and sustainable sourcing.
+            Years of proud partnership with the Embassy of Sri Lanka, Consulate General,
+            and Sri Lanka Business Council.
           </p>
           <div
             className="absolute flex items-center justify-between px-4"
@@ -113,7 +113,7 @@ export default function CsrShowcase() {
               <Image src="/smile.png" alt="" fill className="object-cover" />
             </div>
             <p className={`${newsReader.className} text-2xl tracking-tighter leading-5 ml-19 text-left font-semibold -mt-10 uppercase`}>
-              Spread the Love
+              Diplomatic Ties
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function CsrShowcase() {
         >
           <Image src="/Union.png" alt="" fill className="object-cover" />
           <p className={`${newsReader.className} absolute tracking-tighter leading-5 bottom-7 left-3 text-white px-3 py-1 rounded text-[19px] font-bold`}>
-            Empowering Women in Agriculture
+            Sri Lankan Independence Day Celebrations
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export default function CsrShowcase() {
           style={{ gridColumn: "3 / 4", gridRow: "2 / 3", transform: parallax(0.03) }}
         >
           <p className={`${newsReader.className} text-[28px] text-[#2E2E2E] font-bold mt-15 px-0`}>
-            Join 1000+ <br />Partners Giving Back
+            Proud Partner of <br />OBAs & Events
           </p>
           <div
             className="absolute flex items-center justify-between px-4"
@@ -161,7 +161,7 @@ export default function CsrShowcase() {
         >
           <Image src="/health.png" alt="" fill className="object-cover" />
           <p className={`${newsReader.className} absolute tracking-tighter leading-5 bottom-7 left-3 text-white px-3 py-1 rounded text-[19px] font-bold`}>
-            Health and Nutrition Awareness Drives
+            Grand Avurudu Festival Sponsor
           </p>
         </div>
 
@@ -174,7 +174,7 @@ export default function CsrShowcase() {
               <Image src="/heart.png" alt="" fill className="object-cover" />
             </div>
             <p className={`${newsReader.className} text-2xl text-[#C9F363] tracking-tighter leading-5 ml-19 text-left font-semibold -mt-10 `}>
-              Heartland in Action
+              Community First
             </p>
           </div>
         </div>
@@ -187,24 +187,23 @@ export default function CsrShowcase() {
 
    {/* Heading */}
       <h2 className={`${nunito.className} text-xl max-w-5xl font-extrabold text-center`}>
-        Building Communities Beyond Business
+        Events & Sponsorships: A Pillar of the Community
       </h2>
 
       <p className={`${nunito.className} text-center mt-10 max-w-xl px-6 font-medium mx-auto text-[16px] leading-[29px]`}>
-        At <span className="font-extrabold">Heartland General Trading</span>, we believe true success
-        means making a difference. Our CSR efforts support Sri Lankan farmers,
-        small businesses, and communities, promoting sustainable growth that
-        benefits everyone.
+        At <span className="font-extrabold">Heartland</span>, we believe that our growth is deeply
+        intertwined with the strength of the Sri Lankan community in the UAE. For over 25 years,
+        we have served as a vital link between the island and the diaspora.
       </p>
 
 {/* Card 1 */}
 <div className="relative bg-[#8B0000] rounded-2xl p-9 text-white mt-5 mb-5 w-full py-6 max-w-sm max-h-max mx-auto">
   {/* Percentage */}
-  <h3 className="text-4xl font-bold">95%</h3>
+  <h3 className="text-4xl font-bold">25+</h3>
 
   {/* Description */}
   <p className="text-sm mt-2 leading-5">
-    We partner directly with Sri Lankan growers and small producers to ensure fair trade and sustainable sourcing.
+    Years of proud partnership with the Embassy of Sri Lanka, Consulate General, and Sri Lanka Business Council.
       </p>
 
   {/* Learn More Section */}
@@ -240,19 +239,19 @@ export default function CsrShowcase() {
 
   {/* Text */}
   <p className={`${newsReader.className} absolute bottom-3 left-3 text-white px-2 py-1 rounded text-[19px] font-bold`}>
-    Empowering Women in Agriculture
+    Sri Lankan Independence Day Celebrations
   </p>
 </div>
 
 
-  
+
 
   {/* Info Card*/}
    <div className="w-full h-[200px] mt-5 relative rounded-xl overflow-hidden">
   {/* Image */}
   <Image
     src="/health1.jpg"
-    alt="Health and Nutrition"
+    alt="Grand Avurudu Festival"
     fill
     className="object-cover"
   />
@@ -262,7 +261,7 @@ export default function CsrShowcase() {
     className={`${newsReader.className} absolute bottom-3 left-3 text-white px-2 w-52
        py-1 rounded text-[19px] font-bold`}
   >
-    Health and Nutrition Awareness Drives
+    Grand Avurudu Festival Sponsor
   </p>
 </div>
 

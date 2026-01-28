@@ -37,26 +37,26 @@ export default function OurProjects() {
     {
       id: 1,
       image: "/proj_farmer.png",
-      title: "Farmer Empowerment Program",
-      description: "Training and mentoring small-scale farmers in sustainable agriculture, organic cultivation, and export-ready practices.",
+      title: "Maroons Night",
+      description: "Proud sponsor of the iconic Ananda vs. Nalanda Maroons Night, celebrating the rich legacy and camaraderie of Sri Lankan school traditions.",
     },
     {
       id: 2,
       image: "/proj_child.png",
-      title: "Healthy Start Nutrition Drive",
-      description: "Providing nutritious meals and health check-ups to children in underserved communities to help them grow strong and healthy.",
+      title: "Royal College Dinner Dance",
+      description: "Supporting the Royal College community in the UAE through our partnership with their prestigious annual dinner dance event.",
     },
     {
       id: 3,
       image: "/proj_library.png",
-      title: "Libraries for Learning Program",
-      description: "Setting up community libraries and reading clubs to encourage literacy and spark a love for books among children.",
+      title: "Sri Lankan Bankers Association",
+      description: "Proud partner of the Sri Lankan Bankers Association Dinner Dance, fostering professional networking within our community.",
     },
     {
       id: 4,
       image: "/proj_water.png",
-      title: "Clean Water for Every Child",
-      description: "Installing safe drinking water facilities in schools and villages to promote health and reduce waterborne diseases.",
+      title: "Grand Avurudu Festival",
+      description: "Celebrating Sri Lankan New Year traditions with our community through sponsorship of the Grand Avurudu Festival in the UAE.",
     },
   ];
 
@@ -79,7 +79,7 @@ export default function OurProjects() {
        <p
   className={`${openSans.className} text-[13px] text-center md:text-left text-[#D12714] mx-auto md:mx-0`}
 >
-  Transforming Lives Across Sri Lanka
+  Celebrating Our Shared Heritage
 </p>
 
 
@@ -87,13 +87,13 @@ export default function OurProjects() {
       </div>
 
       {/* Title */}
-      <h2 className="text-[28px] md:text-[32px] text-center md:text-left font-semibold font-['Nunito']">Our Projects</h2>
+      <h2 className="text-[28px] md:text-[32px] text-center md:text-left font-semibold font-['Nunito']">Fostering School & Professional Ties</h2>
 
       {/* Intro Text */}
       <p className={`${openSans.className} max-w-2xl mt-0 text-center md:text-left text-[#243C4B] font-normal leading-[22px] text-sm md:text-base`}>
-        Through our CSR initiatives, we support Sri Lankan farmers, children, women entrepreneurs,
-        and local communities — driving sustainable growth, ethical trade, and positive change across
-        generations.
+        Heartland is the preferred partner for Sri Lankan Old Boys Associations (OBAs) and
+        professional bodies in the UAE. We are proud to associate our brand with iconic
+        events that celebrate our shared heritage.
       </p>
 
       {/* Cards Wrapper */}

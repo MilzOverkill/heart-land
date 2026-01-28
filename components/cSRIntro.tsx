@@ -77,25 +77,29 @@ export default function CsrIntro() {
           <h2
             className={`${nunito.className} text-[16px] md:text-[23px] font-extrabold leading-6 text-[#0F0202]`}
           >
-            Heartland empowers communities by creating sustainable opportunities
-            for Sri Lankan farmers and families.
+            Diplomatic & Institutional Partnerships
           </h2>
 
           <p
             className={`${openSans.className} text-[15px] mt-5 leading-[23px] text-[#2C2C2C]`}
           >
-            Through our CSR programs, we work hand-in-hand with local producers,
-            women entrepreneurs, and youth to build skills that drive long-term
-            growth.
-            <br />
-            From fair trade sourcing to nutrition and education projects, every
-            initiative reflects our belief that true progress begins with empowerment.
+            We maintain a close and ongoing collaboration with the key institutions
+            that represent our nation abroad. Heartland is a proud partner of:
             <br />
             <br />
-            By combining ethical trade, sustainability, and community partnerships,
-            Heartland General Trading is shaping a future where every Sri Lankan
-            producer can thrive on the global stage — with pride, dignity, and
-            opportunity.
+            • The Embassy of Sri Lanka (Abu Dhabi)
+            <br />
+            • The Consulate General of Sri Lanka (Dubai)
+            <br />
+            • The Sri Lanka Business Council (UAE)
+            <br />
+            <br />
+            From sponsoring the Sri Lankan Independence Day celebrations to the
+            &quot;Sri Lanka Beyond Your Dreams&quot; initiative, we are dedicated to supporting
+            the vision of our diplomatic offices. We were honored to be part of the
+            official delegation at the International Industry Expo &apos;24 in Sri Lanka
+            and to sponsor the inaugural Iftar program organized by the Sri Lanka
+            Business Council.
           </p>
         </div>
       </div>
