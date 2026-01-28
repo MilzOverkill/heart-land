@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, David_Libre, Nunito, Inter } from "next/font/google";
+import { Open_Sans, David_Libre, Nunito, Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import FadeTransition from "../components/FadeTransition";
 import Navbar from "../components/Navbar";
@@ -34,6 +34,13 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-roboto",
+});
+
 export const metadata: Metadata = {
   title: "Heart Land",
   description: "Discover authentic Sri Lankan goods in the UAE",
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${openSans.variable} ${davidLibre.variable} ${nunito.variable} ${inter.variable}`}>
+    <html lang="en" className={`${openSans.variable} ${davidLibre.variable} ${nunito.variable} ${inter.variable} ${roboto.variable}`}>
       <body>
         <NavigationProvider>
           <Navbar />
