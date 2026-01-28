@@ -28,16 +28,22 @@ export default function CsrShowcase() {
   
 
       {/* Heading */}
-      <h2 className={`${nunito.className} text-2xl md:text-5xl mt-15 font-bold text-center`}>
-        Building Communities Beyond Business
-      </h2>
+      <h2
+  className={`${nunito.className} text-2xl md:text-5xl font-bold text-center max-w-4xl mx-auto mt-14 leading-tight`}
+>
+  Heartland <span className="text-red-700">♥</span> Homeland <br />
+  Our Commitment to a Healthier Future
+</h2>
 
-      <p className={`${nunito.className} text-center mt-14 max-w-3xl font-medium mx-auto text-[20px] leading-[29px]`}>
-        At <span className="font-extrabold">Heartland General Trading</span>, we believe true success
-        means making a difference. Our CSR efforts support Sri Lankan farmers,
-        small businesses, and communities, promoting sustainable growth that
-        benefits everyone.
-      </p>
+<p
+  className={`${nunito.className} text-center mt-8 max-w-4xl mx-auto font-medium text-[16px] md:text-[22px] leading-[29px] text-black`}
+>
+  At Heartland General Trading, we believe that business
+  success is only meaningful when it serves a greater purpose. We view our
+  responsibility to the community not just as a duty, but as a serious,
+  long-term commitment.
+</p>
+
 
       {/* GRID */}
       <div className="-mt-10 grid grid-cols-2 md:grid-cols-5 gap-1 place-items-center">
