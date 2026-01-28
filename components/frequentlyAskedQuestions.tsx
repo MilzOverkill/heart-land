@@ -35,6 +35,14 @@ export default function Faq() {
       answer:
         "We offer a variety of shipping options to suit your needs, including both standard and expedited delivery services across the UAE.",
     },
+    {
+      question:"How can I reach your team?",
+      answer: "We’re always here to help! You can reach our friendly customer support team via email, phone, or by using the contact form right here on our website."
+    },
+    {
+      question:"What should I do if there's an issue with my order?",
+      answer: "If something isn’t quite right, please let us know immediately. We are fully committed to resolving any concerns and making sure you have a great experience with us."
+    }
   ];
 
   
