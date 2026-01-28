@@ -1,21 +1,81 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Open_Sans, Nunito } from "next/font/google";
 import { useRouter } from "next/navigation";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-open-sans",
-});
+type ScrollableDescriptionProps = {
+  description: string;
+  textSize?: string;
+};
 
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-nunito",
-});
+function ScrollableDescription({ description, textSize = "text-sm" }: ScrollableDescriptionProps) {
+  const containerRef = useRef<HTMLParagraphElement>(null);
+  const [isScrollable, setIsScrollable] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+
+  const checkScrollable = useCallback(() => {
+    const el = containerRef.current;
+    if (el) {
+      const scrollable = el.scrollHeight > el.clientHeight;
+      setIsScrollable(scrollable);
+      if (!scrollable) setIsAtBottom(false);
+    }
+  }, []);
+
+  const handleScroll = () => {
+    const el = containerRef.current;
+    if (el) {
+      const atBottom = Math.abs(el.scrollHeight - el.clientHeight - el.scrollTop) < 5;
+      setIsAtBottom(atBottom);
+    }
+  };
+
+  const scrollToPosition = () => {
+    const el = containerRef.current;
+    if (el) {
+      if (isAtBottom) {
+        el.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+      }
+    }
+  };
+
+  useEffect(() => {
+    checkScrollable();
+    window.addEventListener("resize", checkScrollable);
+    return () => window.removeEventListener("resize", checkScrollable);
+  }, [checkScrollable, description]);
+
+  return (
+    <div className="relative flex-1 min-h-0">
+      <p
+        ref={containerRef}
+        onScroll={handleScroll}
+        className={`font-openSans ${textSize} leading-[160%] text-[#666666] overflow-y-auto h-full pr-1 ${isScrollable ? "pb-8" : ""}`}
+      >
+        {description}
+      </p>
+      {isScrollable && (
+        <div
+          onClick={scrollToPosition}
+          className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white via-white/80 to-transparent flex items-end justify-center pb-1 cursor-pointer"
+        >
+          <svg
+            className={`w-4 h-4 text-[#999999] transition-transform duration-300 ${isAtBottom ? "" : "animate-bounce"}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            style={{ transform: isAtBottom ? "rotate(180deg)" : "rotate(0deg)" }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      )}
+    </div>
+  );
+}
 
 type Card = {
   image: string;
@@ -28,28 +88,28 @@ const cards: Card[] = [
   {
     image: "/Frame 61 (2).png",
     date: "Aug 10, 2025",
-    title: "Seeds of Change: Farmers Growing Beyond Boundaries",
+    title: "Supporting Sri Lanka with Compassion and Purpose",
     description:
-      "At Heartland General Trading, our mission goes far beyond distributing authentic Sri Lankan flavors; it is rooted in a deep commitment to making a lasting impact on the lives of our people. We are proud to introduce our dedicated CSR initiative, ♥ a long-term pledge to support the fight against cancer in Sri Lanka. Business with a Soul As a core part of this initiative, Heartland allocates a percentage of our annual profits to support vital cancer-related projects and treatment facilities across the island. We view this not as a one-time gesture, but as a serious, sustained responsibility to our homeland.",
+      "At Heartland General Trading, our mission goes far beyond distributing authentic Sri Lankan flavors; it is rooted in a deep commitment to making a lasting impact on the lives of our people. We are proud to introduce our dedicated CSR initiative, ‘Heartland ♥ Homeland,’ a long-term pledge to support the fight against cancer in Sri Lanka. Business with a Soul As a core part of this initiative, Heartland allocates a percentage of our annual profits to support vital cancer-related projects and treatment facilities across the island. We view this not as a one-time gesture, but as a serious, sustained responsibility to our homeland.",
   },
   {
     image: "/Frame 61 (3).png",
     date: "Aug 10, 2025",
-    title: "Women Leading the Way in Food Enterprise",
+    title: "Empowering Smallholders, Cultivating Growth",
     description:
       "As a leading distributor of Sri Lankan food products in the UAE, we recognize the vital role that small and medium-scale entrepreneurs play in preserving the rich culinary heritage of our homeland . That's why we've made it our mission to assist these dedicated farmers by facilitating the marketing of their products in Dubai.",
   },
   {
     image: "/Frame 62.png",
     date: "Aug 10, 2025",
-    title: "From Local Fields to Global Shelves",
+    title: "Women Leading the Way in Food Enterprise",
     description:
       "At Heartland General Trading, we celebrate the incredible contributions of women in the food industry, particularly those who are redefining the landscape of food enterprises in Sri Lanka. From farmers to entrepreneurs, women are taking the lead, fostering innovation and resilience while preserving the rich culinary traditions of our homeland.",
   },
   {
     image: "/Frame 63.png",
     date: "Aug 10, 2025",
-    title: "Sustainability in Action: Protecting Tomorrow’s Resources",
+    title: "A Leader in Quality and Authenticity",
     description:
       "Heartland General Trading has been a pioneer in the distribution of Sri Lankan food products since its establishment. With over 2 decades of experience, we have built a strong reputation for quality and authenticity, ensuring that every product reflects the rich culinary heritage of Sri Lanka. Our extensive network of suppliers and partnerships with local farmers allow us to source the highest quality ingredients. This commitment to excellence has made us the trusted choice for customers seeking genuine Sri Lankan flavors.",
   },
@@ -58,369 +118,163 @@ const cards: Card[] = [
 export default function BlogsSuccessStory() {
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const [offsetY, setOffsetY] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const CARD_WIDTH = 280;
-  const GAP = 30;
 
   const scrollLeft = () => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: -(CARD_WIDTH + GAP), behavior: "smooth" });
+    scrollRef.current.scrollBy({ left: -321, behavior: "smooth" });
   };
 
   const scrollRight = () => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: CARD_WIDTH + GAP, behavior: "smooth" });
+    scrollRef.current.scrollBy({ left: 321, behavior: "smooth" });
   };
 
-  // Calculate parallax for mobile card
-  const parallaxYMobile = Math.sin(offsetY / 200) * 20;
-
   return (
-    <section
-      className={`${openSans.variable} ${nunito.variable}`}
-      style={{
-        width: "100%",
-        maxWidth: "1317px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "40px",
-        padding: isMobile ? "32px 16px" : "30px 50px",
-        margin: "0 auto",
-        boxSizing: "border-box",
-      }}
-    >
+    <section className="w-full max-w-[1440px] flex flex-col gap-6 py-8 px-4 md:py-[40px] md:px-[60px] mx-auto pb-8 md:pb-10 mb-8 md:mb-10">
       {/* Heading */}
-      <header
-        style={{
-          width: isMobile ? "100%" : "594px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "5px",
-          marginLeft: isMobile ? "0" : "15px",
-          alignItems: isMobile ? "center" : "flex-start",
-          textAlign: isMobile ? "center" : "left",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            justifyContent: isMobile ? "center" : "flex-start",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-open-sans)",
-              fontSize: "18px",
-              color: isMobile ? "#c4161c" : "#000",
-            }}
-          >
+      <header className="w-full flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-2">
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2.5">
+            <span className="font-openSans text-sm md:text-lg text-[#666666] tracking-wide">
+              Inspiring Voices, Real Change
+            </span>
+            <span className="hidden md:block w-[100px] h-[1px] bg-[#999999]" />
+          </div>
+          <h2 className="font-nunito font-semibold text-[28px] md:text-[30px] text-black leading-tight">
             Inspiring Voices, Real Change
-          </span>
-
-          {!isMobile && <span style={{ width: "120px", height: "2px", background: "#000" }} />}
+          </h2>
         </div>
 
-        <h2
-          style={{
-            fontFamily: "var(--font-nunito)",
-            fontWeight: 600,
-            fontSize: "30px",
-            margin: 0,
-            color: "#000",
-          }}
-        >
-          Blogs & Success Story
-        </h2>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-3">
+          <button
+            onClick={scrollLeft}
+            className="w-10 h-10 rounded-full bg-white border border-[#E5E5E5] cursor-pointer flex items-center justify-center hover:bg-gray-50 transition-colors"
+            aria-label="Scroll left"
+          >
+            <Image src="/leftArrow.png" alt="" width={20} height={20} />
+          </button>
+          <button
+            onClick={scrollRight}
+            className="w-10 h-10 rounded-full bg-white border border-[#E5E5E5] cursor-pointer flex items-center justify-center hover:bg-gray-50 transition-colors"
+            aria-label="Scroll right"
+          >
+            <Image src="/rightArrow.png" alt="" width={20} height={20} />
+          </button>
+        </nav>
       </header>
 
-      {/* Cards */}
-      <div style={{ position: "relative" }}>
-        {isMobile ? (
-          // ===== MOBILE SINGLE CARD VIEW WITH PARALLAX =====
-          <>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                overflow: "hidden",
-                width: "100%",
-                transform: `translateY(${parallaxYMobile}px)`,
-                transition: "transform 0.1s ease-out",
-              }}
-            >
+      {/* Cards Container */}
+      <div className="relative">
+        {/* Mobile Single Card View */}
+        <div className="flex md:hidden justify-center w-full py-4">
+          <article className="w-[306px] h-[585px] rounded-[30px] bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] overflow-hidden pb-[30px]">
+            {/* Image */}
+            <div className="relative h-[224px] overflow-hidden rounded-t-[24px]">
+              <Image
+                src={cards[currentIndex].image}
+                alt={cards[currentIndex].title}
+                fill
+                className="object-cover"
+              />
+              <button
+                onClick={() => router.push("/")}
+                className="absolute top-3 right-3 w-12 h-12 rounded-full bg-[#C4161C] cursor-pointer flex items-center justify-center"
+                aria-label="Read more"
+              >
+                <Image src="/whiteArrow.png" alt="" width={20} height={20} />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-5 flex flex-col h-[calc(100%-224px)]">
+              <div className="flex items-center gap-2 mb-3">
+                <Image src="/building.png" alt="" width={16} height={16} />
+                <span className="font-openSans text-xs text-[#999999]">
+                  {cards[currentIndex].date}
+                </span>
+              </div>
+              <h3 className="font-nunito font-bold text-lg mb-2 text-black leading-tight">
+                {cards[currentIndex].title}
+              </h3>
+              <ScrollableDescription description={cards[currentIndex].description} textSize="text-sm" />
+            </div>
+          </article>
+        </div>
+
+        {/* Mobile Navigation */}
+        <nav className="flex md:hidden justify-center gap-4 mt-6">
+          <button
+            onClick={() =>
+              setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1))
+            }
+            className="w-12 h-12 rounded-full bg-white border border-[#E5E5E5] cursor-pointer flex items-center justify-center"
+            aria-label="Previous card"
+          >
+            <Image src="/wleftArrow.png" alt="" width={20} height={20} />
+          </button>
+          <button
+            onClick={() =>
+              setCurrentIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1))
+            }
+            className="w-12 h-12 rounded-full bg-white border border-[#E5E5E5] cursor-pointer flex items-center justify-center"
+            aria-label="Next card"
+          >
+            <Image src="/wrightArrow.png" alt="" width={20} height={20} />
+          </button>
+        </nav>
+
+        {/* Desktop Scrollable View */}
+        <div
+          ref={scrollRef}
+          className="hidden md:flex gap-[15px] overflow-x-auto scrollbar-hide scroll-smooth pb-8"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {cards.map((card, index) => (
               <article
-                style={{
-                  width: "280px",
-                  borderRadius: "24px",
-                  background: "#fff",
-                  boxShadow: "0px 16px 32px -4px rgba(0,0,0,0.15)",
-                  overflow: "hidden",
-                  transition: "transform 0.3s ease",
-                }}
+                key={index}
+                className="w-[306px] h-[585px] rounded-[30px] bg-white shadow-[0px_4px_30px_rgba(0,0,0,0.08)] shrink-0 overflow-hidden pb-[30px] transition-shadow duration-200 hover:shadow-[0px_8px_30px_rgba(0,0,0,0.12)]"
               >
                 {/* Image */}
-                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
+                <div className="relative h-[224px] overflow-hidden rounded-t-[24px]">
                   <Image
-                    src={cards[currentIndex].image}
-                    alt={cards[currentIndex].title}
+                    src={card.image}
+                    alt={card.title}
                     fill
-                    style={{ objectFit: "cover" }}
+                    className="object-cover"
                   />
-
                   <button
                     onClick={() => router.push("/")}
-                    style={{
-                      position: "absolute",
-                      top: 12,
-                      right: 12,
-                      background: "transparent",
-                      border: 0,
-                      cursor: "pointer",
-                    }}
+                    className="absolute top-3 right-3 w-12 h-12 rounded-full bg-[#C4161C] cursor-pointer flex items-center justify-center hover:bg-[#A01217] transition-colors"
+                    aria-label="Read more"
                   >
-                    <Image src="/whiteArrow.png" alt="Open" width={56} height={56} />
+                    <Image src="/whiteArrow.png" alt="" width={50} height={50} />
                   </button>
                 </div>
 
                 {/* Content */}
-                <div style={{ padding: "15px" }}>
-                  <div style={{ display: "flex", gap: "8px" }}>
-                    <Image src="/building.png" alt="Date" width={18} height={20} />
-                    <span
-                      style={{
-                        fontFamily: "var(--font-open-sans)",
-                        fontSize: "14px",
-                        color: "#999",
-                      }}
-                    >
-                      {cards[currentIndex].date}
+                <div className="p-5 flex flex-col h-[calc(100%-224px)]">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Image src="/building.png" alt="" width={16} height={16} />
+                    <span className="font-openSans text-xs text-[#999999]">
+                      {card.date}
                     </span>
                   </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-nunito)",
-                      fontWeight: 700,
-                      fontSize: "20px",
-                      marginTop: "8px",
-                    }}
-                  >
-                    {cards[currentIndex].title}
+                  <h3 className="font-nunito font-bold text-xl mb-2 text-black leading-tight">
+                    {card.title}
                   </h3>
-
-                  <p
-                    style={{
-                      fontFamily: "var(--font-open-sans)",
-                      fontSize: "14px",
-                      lineHeight: "160%",
-                      color: "#6D6D6D",
-                    }}
-                  >
-                    {cards[currentIndex].description}
-                  </p>
+                  <ScrollableDescription description={card.description} textSize="text-[14px] leading-[10px]" />
                 </div>
               </article>
-            </div>
-
-            {/* Mobile Arrows */}
-            <nav className="cards-nav">
-              <button
-                onClick={() =>
-                  setCurrentIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1))
-                }
-                className="nav-arrow-button"
-              >
-                <Image src="/wleftArrow.png" alt="Left" width={22} height={22} />
-              </button>
-              <button
-                onClick={() =>
-                  setCurrentIndex((prev) => (prev === cards.length - 1 ? 0 : prev + 1))
-                }
-                className="nav-arrow-button"
-              >
-                <Image src="/wrightArrow.png" alt="Right" width={22} height={22} />
-              </button>
-            </nav>
-          </>
-        ) : (
-          // ===== DESKTOP SCROLLABLE VIEW =====
-          <>
-            <div
-              ref={scrollRef}
-              className="cards-scroll-container"
-              style={{
-                display: "flex",
-                gap: `${GAP}px`,
-                overflowX: "auto",
-                padding: "20px 12px",
-                WebkitOverflowScrolling: "touch",
-              }}
-            >
-              {cards.map((card, index) => {
-                const parallaxY = Math.sin((offsetY + index * 50) / 200) * 20;
-                return (
-                  <article
-                    key={index}
-                    style={{
-                      width: CARD_WIDTH,
-                      borderRadius: "24px",
-                      background: "#fff",
-                      boxShadow: "0px 16px 32px -4px rgba(0,0,0,0.15)",
-                      flex: "0 0 auto",
-                      overflow: "hidden",
-                      transform: `translateY(${parallaxY}px)`,
-                      transition: "transform 0.1s ease-out",
-                    }}
-                  >
-                    {/* Image */}
-                    <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
-                      <Image src={card.image} alt={card.title} fill style={{ objectFit: "cover" }} />
-
-                      <button
-                        onClick={() => router.push("/")}
-                        style={{
-                          position: "absolute",
-                          top: 12,
-                          right: 12,
-                          background: "transparent",
-                          border: 0,
-                          cursor: "pointer",
-                        }}
-                      >
-                        <Image src="/whiteArrow.png" alt="Open" width={56} height={56} />
-                      </button>
-                    </div>
-
-                    {/* Content */}
-                    <div style={{ padding: "15px" }}>
-                      <div style={{ display: "flex", gap: "8px" }}>
-                        <Image src="/building.png" alt="Date" width={18} height={20} />
-                        <span
-                          style={{
-                            fontFamily: "var(--font-open-sans)",
-                            fontSize: "14px",
-                            color: "#999",
-                          }}
-                        >
-                          {card.date}
-                        </span>
-                      </div>
-
-                      <h3
-                        style={{
-                          fontFamily: "var(--font-nunito)",
-                          fontWeight: 700,
-                          fontSize: "20px",
-                          marginTop: "8px",
-                        }}
-                      >
-                        {card.title}
-                      </h3>
-
-                      <p
-                        style={{
-                          fontFamily: "var(--font-open-sans)",
-                          fontSize: "13px",
-                          lineHeight: "160%",
-                          color: "#6D6D6D",
-                        }}
-                      >
-                        {card.description}
-                      </p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            <nav className="cards-nav">
-              <button onClick={scrollLeft} className="nav-arrow-button">
-                <Image src="/leftArrow.png" alt="Left" width={22} height={22} />
-              </button>
-              <button onClick={scrollRight} className="nav-arrow-button">
-                <Image src="/rightArrow.png" alt="Right" width={22} height={22} />
-              </button>
-            </nav>
-          </>
-        )}
+          ))}
+        </div>
       </div>
 
-      {/* Styles */}
+      {/* Hide scrollbar CSS */}
       <style jsx>{`
-        .cards-scroll-container::-webkit-scrollbar {
+        .scrollbar-hide::-webkit-scrollbar {
           display: none;
-        }
-
-        .cards-nav {
-          position: absolute;
-          top: -70px;
-          right: 36px;
-          display: flex;
-          gap: 20px;
-        }
-
-        .nav-arrow-button {
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          border: none;
-          background: transparent;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        @media (max-width: 768px) {
-          .cards-scroll-container {
-            scroll-snap-type: x mandatory;
-            padding-left: calc((100vw - 280px) / 2);
-            padding-right: calc((100vw - 280px) / 2);
-            padding-top: 32px;
-            padding-bottom: 32px;
-          }
-
-          .cards-scroll-container article {
-            scroll-snap-align: center;
-            width: 280px !important;
-          }
-
-          .cards-nav {
-            position: static;
-            margin: 12px auto 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-          }
-
-          .nav-arrow-button {
-            width: 48px;
-            height: 48px;
-            background: #c4161c;
-            border-radius: 50%;
-          }
-
-          .nav-arrow-button img {
-            filter: brightness(0) invert(1);
-          }
         }
       `}</style>
     </section>
