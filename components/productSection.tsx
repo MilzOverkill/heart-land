@@ -1,14 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Open_Sans } from "next/font/google";
+import { openSans } from "@/app/fonts";
 import Image from "next/image";
 import { Search } from "lucide-react";
 import { SlidersHorizontal } from "lucide-react";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-});
 
 type Product = {
   id: number;
@@ -27,47 +24,76 @@ type CategoryItem = {
 
 
 const initialProducts: Product[] = [
-  { id: 1, title: "Essential Electrolytes", price: 1, category: "Biscuits", image: "/productImage1.png", bestseller: true },
-  { id: 2, title: "Essential Electrolytes", price: 2, category: "Snacks", image: "/productImage2.png", bestseller: false },
-  { id: 3, title: "Essential Electrolytes", price: 3, category: "Rice", image: "/productImage3.png", bestseller: false },
-  { id: 4, title: "Essential Electrolytes", price: 4, category: "Sweets", image: "/productImage2.png", bestseller: false },
-  { id: 5, title: "Essential Electrolytes", price: 5, category: "Milk", image: "/productImage1.png", bestseller: false },
-  { id: 6, title: "Essential Electrolytes", price: 6, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
-  { id: 7, title: "Essential Electrolytes", price: 7, category: "Noodles", image: "/productImage2.png", bestseller: false },
-  { id: 8, title: "Essential Electrolytes", price: 8, category: "Coconut Milk", image: "/productImage3.png", bestseller: true },
-  { id: 9, title: "Essential Electrolytes", price: 9, category: "Jam", image: "/productImage3.png", bestseller: true },
-  { id: 10, title: "Essential Electrolytes", price: 10, category: "Spices", image: "/productImage1.png", bestseller: true },
-  { id: 11, title: "Essential Electrolytes", price: 11, category: "Oil & Ghee", image: "/productImage1.png", bestseller: true },
-  { id: 12, title: "Essential Electrolytes", price: 12, category: "Dairy Products", image: "/productImage1.png", bestseller: true },
-  { id: 13, title: "Essential Electrolytes", price: 13, category: "Biscuits", image: "/productImage1.png", bestseller: true },
-  { id: 14, title: "Essential Electrolytes", price: 14, category: "Snacks", image: "/productImage2.png", bestseller: false },
-  { id: 15, title: "Essential Electrolytes", price: 15, category: "Rice", image: "/productImage3.png", bestseller: false },
-  { id: 16, title: "Essential Electrolytes", price: 16, category: "Sweets", image: "/productImage2.png", bestseller: false },
-  { id: 18, title: "Essential Electrolytes", price: 17, category: "Milk", image: "/productImage1.png", bestseller: false },
-  { id: 19, title: "Essential Electrolytes", price: 18, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
-  { id: 20, title: "Essential Electrolytes", price: 19, category: "Noodles", image: "/productImage2.png", bestseller: false },
-  { id: 21, title: "Essential Electrolytes", price: 20, category: "Coconut Milk", image: "/productImage3.png", bestseller: true },
-  { id: 22, title: "Essential Electrolytes", price: 21, category: "Jam", image: "/productImage3.png", bestseller: true },
-  { id: 23, title: "Essential Electrolytes", price: 22, category: "Spices", image: "/productImage1.png", bestseller: true },
-  { id: 24, title: "Essential Electrolytes", price: 23, category: "Oil & Ghee", image: "/productImage1.png", bestseller: true },
-  { id: 25, title: "Essential Electrolytes", price: 24, category: "Dairy Products", image: "/productImage1.png", bestseller: true },
-  { id: 26, title: "Essential Electrolytes", price: 25, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
-  { id: 27, title: "Essential Electrolytes", price: 26, category: "Noodles", image: "/productImage2.png", bestseller: false },
-  { id: 28, title: "Essential Electrolytes", price: 27, category: "Coconut Milk", image: "/productImage3.png", bestseller: true },
-  { id: 29, title: "Essential Electrolytes", price: 28, category: "Jam", image: "/productImage3.png", bestseller: true },
-  { id: 30, title: "Essential Electrolytes", price: 29, category: "Spices", image: "/productImage1.png", bestseller: true },
-  { id: 31, title: "Essential Electrolytes", price: 30, category: "Oil & Ghee", image: "/productImage1.png", bestseller: true },
-  { id: 32, title: "Essential Electrolytes", price: 31, category: "Dairy Products", image: "/productImage1.png", bestseller: true },
-  { id: 33, title: "Essential Electrolytes", price: 32, category: "Biscuits", image: "/productImage1.png", bestseller: true },
-  { id: 34, title: "Essential Electrolytes", price: 33, category: "Snacks", image: "/productImage2.png", bestseller: false },
-  { id: 35, title: "Essential Electrolytes", price: 34, category: "Rice", image: "/productImage3.png", bestseller: false },
-  { id: 36, title: "Essential Electrolytes", price: 35, category: "Sweets", image: "/productImage2.png", bestseller: false },
-  { id: 38, title: "Essential Electrolytes", price: 36, category: "Milk", image: "/productImage1.png", bestseller: false },
-  { id: 39, title: "Essential Electrolytes", price: 37, category: "Curry Powder", image: "/productImage3.png", bestseller: true },
-  { id: 40, title: "Essential Electrolytes", price: 38, category: "Noodles", image: "/productImage2.png", bestseller: false },
+  // Jams
+  { id: 1, title: "Pine Apple (450g)", price: 0, category: "Jams", image: "/products/_DSC0228.JPG" },
+  { id: 2, title: "Woodapple (450g)", price: 0, category: "Jams", image: "/products/_DSC0224.JPG" },
+  { id: 3, title: "Mixed Fruit (450g)", price: 0, category: "Jams", image: "/products/_DSC0226.JPG" },
 
+  // Rice
+  { id: 4, title: "Red Raw Rice (1Kg & 5Kg)", price: 0, category: "Rice", image: "/products/_DSC0207_.jpg" },
+  { id: 5, title: "White Nadu Rice (5Kg)", price: 0, category: "Rice", image: "/products/_DSC0208.JPG" },
+  { id: 6, title: "Keeri Samba Rice (1Kg)", price: 0, category: "Rice", image: "/products/_DSC0210.JPG" },
+  { id: 7, title: "White Raw Rice (1Kg)", price: 0, category: "Rice", image: "/products/_DSC0211.JPG" },
+  { id: 8, title: "Samba Rice (1Kg)", price: 0, category: "Rice", image: "/products/_DSC0212.JPG" },
+  { id: 9, title: "Red Raw Samba Rice (1Kg)", price: 0, category: "Rice", image: "/products/_DSC0213.JPG" },
 
+  // Noodles
+  { id: 10, title: "Kottu Noodles (400g)", price: 0, category: "Noodles", image: "/products/_DSC0201.jpg" },
+  { id: 11, title: "Special Noodles (400g)", price: 0, category: "Noodles", image: "/products/_DSC0202.jpg" },
+  { id: 12, title: "Kurakkan Noodles (400g)", price: 0, category: "Noodles", image: "/products/_DSC0204.jpg" },
+  { id: 13, title: "Noodles (400g)", price: 0, category: "Noodles", image: "/products/_DSC0205.jpg" },
+
+  // Flour
+  { id: 14, title: "Kurakkan Flour (400g)", price: 0, category: "Flour", image: "/products/_DSC0230.jpg" },
+  { id: 15, title: "String Hopper Flour (700g)", price: 0, category: "Flour", image: "/products/_DSC0232_.jpg" },
+  { id: 16, title: "Thosai Mix (400g)", price: 0, category: "Flour", image: "/products/_DSC0233_.jpg" },
+  { id: 17, title: "Easy Hopper Flour (400g)", price: 0, category: "Flour", image: "/products/_DSC0235_.jpg" },
+  { id: 18, title: "Special Papadam (50g)", price: 0, category: "Flour", image: "/products/_DSC0237.JPG" },
+
+  // Bottled Items
+  { id: 19, title: "Chinese Chilli Paste (325g)", price: 0, category: "Bottled Items", image: "/products/_DSC0220.JPG" },
+  { id: 20, title: "Mango Chutney (450g)", price: 0, category: "Bottled Items", image: "/products/_DSC0221.JPG" },
+  { id: 21, title: "Maldive Fish Sambol (250g)", price: 0, category: "Bottled Items", image: "/products/_DSC0222.JPG" },
+  { id: 22, title: "Sinhalese Pickle (350g)", price: 0, category: "Bottled Items", image: "/products/_DSC0223.JPG" },
+  { id: 23, title: "Katta Sambol (350g)", price: 0, category: "Bottled Items", image: "/products/_DSC0225.JPG" },
+
+  // Dry Fish
+  { id: 24, title: "Katta Fish Fry (100g)", price: 0, category: "Dry Fish", image: "/products/_DSC0244.JPG" },
+  { id: 25, title: "Maldive Fish Chips (100g)", price: 0, category: "Dry Fish", image: "/products/_DSC0247.JPG" },
+  { id: 26, title: "Sprats Badum (100g)", price: 0, category: "Dry Fish", image: "/products/_DSC0257.JPG" },
+  { id: 27, title: "Dried Fish Talapath (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0273.jpg" },
+  { id: 28, title: "Dried Fish - Keeramin (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0284.jpg" },
+  { id: 29, title: "Dried Sprats (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0286_.jpg" },
+  { id: 30, title: "Dried Fish - Shrimp (100g)", price: 0, category: "Dry Fish", image: "/products/_DSC0201.jpg" },
+  { id: 31, title: "Dried Fish - KATTA (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0291.JPG" },
+
+  // Spices
+  { id: 32, title: "Crushed Pepper (100g)", price: 0, category: "Spices", image: "/products/_DSC0246.JPG" },
+  { id: 33, title: "Roaster Curry Powder (Black) (100g)", price: 0, category: "Spices", image: "/products/_DSC0248.JPG" },
+  { id: 34, title: "Mustard Seeds (100g)", price: 0, category: "Spices", image: "/products/_DSC0249.JPG" },
+  { id: 35, title: "Chilli Powder (100g)", price: 0, category: "Spices", image: "/products/_DSC0250.jpg" },
+  { id: 36, title: "Turmeric Powder (100g)", price: 0, category: "Spices", image: "/products/_DSC0251.jpg" },
+  { id: 37, title: "Jaffna Curry Powder (100g)", price: 0, category: "Spices", image: "/products/_DSC0253.jpg" },
+  { id: 38, title: "Plain Curry Powder (100g)", price: 0, category: "Spices", image: "/products/_DSC0254.jpg" },
+  { id: 39, title: "Sago Seeds (100g)", price: 0, category: "Spices", image: "/products/_DSC0256.JPG" },
+  { id: 40, title: "Coriander Seeds (100g)", price: 0, category: "Spices", image: "/products/_DSC0260.JPG" },
+  { id: 41, title: "Crushed Chilli (100g)", price: 0, category: "Spices", image: "/products/_DSC0261.JPG" },
+  { id: 42, title: "Cinnamon Stick (100g)", price: 0, category: "Spices", image: "/products/_DSC0262.JPG" },
+  { id: 43, title: "Cummin Seeds (100g)", price: 0, category: "Spices", image: "/products/_DSC0263.JPG" },
+  { id: 44, title: "Calumba Wood / Venivelgata (100g)", price: 0, category: "Spices", image: "/products/_DSC0264.JPG" },
+  { id: 45, title: "Goraka / Black Tamarind (100g)", price: 0, category: "Spices", image: "/products/_DSC0265.jpg" },
+  { id: 46, title: "Fenugreek (100g)", price: 0, category: "Spices", image: "/products/_DSC0267.jpg" },
+  { id: 47, title: "Pepper Powder (100g)", price: 0, category: "Spices", image: "/products/_DSC0275.JPG" },
+  { id: 48, title: "Dried Chilli (100g)", price: 0, category: "Spices", image: "/products/_DSC0290.JPG" },
+  { id: 49, title: "Tamarind (100g)", price: 0, category: "Spices", image: "/products/_DSC0279.jpg" },
+  { id: 50, title: "Pepper Whole (100g)", price: 0, category: "Spices", image: "/products/_DSC0299.jpg" },
+  { id: 51, title: "Curd Chilli (100g)", price: 0, category: "Spices", image: "/products/_DSC0277.jpg" },
+  { id: 52, title: "Dehydrated Jack Fruit (100g)", price: 0, category: "Spices", image: "/products/_DSC0280.JPG" },
+
+  // Savoury
+  { id: 53, title: "Appalam (50g)", price: 0, category: "Savoury", image: "/products/_DSC0238.JPG" },
 ];
+
 
 export default function ProductsSection() {
   const [query, setQuery] = useState("");
@@ -91,18 +117,14 @@ export default function ProductsSection() {
   });
 
   const categoryImageMap: Record<string, string> = {
-  Biscuits: "/productImage1.png",
-  Snacks: "/productImage2.png",
+  Jams: "/productImage1.png",
   Rice: "/productImage3.png",
-  Sweets: "/productImage1.png",
-  Milk: "/productImage2.png",
-  "Curry Powder": "/productImage3.png",
-  Noodles: "/productImage1.png",
-  "Coconut Milk": "/productImage2.png",
-  Jam: "/productImage3.png",
-  Spices: "/productImage2.png",
-  "Oil & Ghee": "/productImage3.png",
-  "Dairy Products": "/productImage1.png",
+  Noodles: "/productImage2.png",
+  Flour: "/productImage1.png",
+  "Bottled Items": "/productImage2.png",
+  "Dry Fish": "/productImage3.png",
+  Spices: "/productImage1.png",
+  Savoury: "/productImage2.png",
 };
 
 
