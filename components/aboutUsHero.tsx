@@ -47,7 +47,7 @@ useEffect(() => {
             A Bit
           </p>
           <h1 className="text-[25px] font-bold mb-4 tracking-[4px]" style={{ fontFamily: 'Open Sans' }}>A 25-Year Legacy of Authenticity</h1>
-          <p className="text-[14px] text-gray-700 mb-6 leading-8.5 font-nunito">
+          <p className="text-[14px] text-gray-700 mb-6 leading-8.5 font-nunito ">
             Welcome to Heartland General Trading Co LLC, your premier gateway to the authentic  
             flavors of Sri Lanka in the UAE. Established in 2001 by entrepreneur Mohamed Fazal  
             Mawjood, we are proud to have served our community for over 25 years. From our humble  
@@ -134,29 +134,27 @@ useEffect(() => {
             />
             <div className="absolute -bottom-12 md:-bottom-16 left-0 flex items-end gap-3 md:gap-5">
               <Image
-  src="/Rectangle 90.png"
-  alt="food 1"
-  width={250}
-  height={210}
-  className="
-    rounded-lg
-    -ml-8 md:-ml-10 lg:-ml-14
-    -mb-2 md:-mb-3
-    w-[180px] sm:w-[220px] md:w-[220px] lg:w-60
-    h-auto
-  "
-/>
-
-  <div>
-  <Image
-    src="/25years.png"
-    alt="25 Years Experience"
-    width={170}
-    height={170}
-    className="object-contain -ml-3 sm:-ml-4 md:-ml-3"
-  />
-</div>
-
+              src="/Rectangle 90.png"
+              alt="food 1"
+              width={250}
+              height={210}
+              className="
+                rounded-lg
+                -ml-8 md:-ml-10 lg:-ml-14
+                -mb-2 md:-mb-3
+                w-[180px] sm:w-[220px] md:w-[220px] lg:w-60
+                h-auto
+              "
+            />
+            <div>
+              <Image
+                src="/25years.png"
+                alt="25 Years Experience"
+                width={170}
+                height={170}
+                className="object-contain -ml-3 sm:-ml-4 md:-ml-3"
+              />
+            </div>
             </div>
           </div>
         </div>
