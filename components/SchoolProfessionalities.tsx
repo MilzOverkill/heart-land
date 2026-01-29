@@ -55,14 +55,14 @@ export default function SchoolProfessionalTies() {
       </div>
 
       {/* First Row - Three Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[22px] mb-6 lg:mb-8 max-w-[1200px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 lg:mb-8 max-w-[1200px]">
         {events.map((event, index) => (
           <article
             key={index}
-            className="bg-white rounded-[20px] border border-[#E0E0E0] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-shadow w-full lg:w-[378px]"
+            className="bg-white rounded-[20px] border border-[#E0E0E0] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-shadow"
           >
             {/* Image */}
-            <div className="relative w-full h-[220px] sm:h-[260px] md:h-[280px] lg:w-[378px] lg:h-[300px] overflow-hidden rounded-t-[20px]">
+            <div className="relative w-full aspect-[378/300] overflow-hidden rounded-t-[20px]">
               <Image
                 src={event.image}
                 alt={event.title}
@@ -70,7 +70,7 @@ export default function SchoolProfessionalTies() {
                 className="object-cover rounded-t-[20px]"
               />
             </div>
-            
+
             {/* Content */}
             <div className="p-5 md:p-6">
               <div className="flex flex-col gap-2">
@@ -87,14 +87,14 @@ export default function SchoolProfessionalTies() {
       </div>
 
       {/* Second Row - Two Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[33px] max-w-[1200px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[1200px]">
         {projects.map((project, index) => (
           <article
             key={index}
-            className="bg-white rounded-[20px] border border-[#E0E0E0] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-shadow w-full lg:w-[583px]"
+            className="bg-white rounded-[20px] border border-[#E0E0E0] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-shadow"
           >
             {/* Image */}
-            <div className="relative w-full h-[220px] sm:h-[260px] md:h-[280px] lg:w-[583px] lg:h-[300px] overflow-hidden rounded-t-[20px]">
+            <div className="relative w-full aspect-[583/300] overflow-hidden rounded-t-[20px]">
               <Image
                 src={project.image}
                 alt={project.title}
@@ -102,7 +102,7 @@ export default function SchoolProfessionalTies() {
                 className="object-cover rounded-t-[20px]"
               />
             </div>
-            
+
             {/* Content */}
             <div className="p-5 md:p-6">
               <div className="flex flex-col gap-2">
@@ -114,7 +114,7 @@ export default function SchoolProfessionalTies() {
                 </h3>
                 {project.subtitle && (
                   <p
-                    className="text-sm font-roboto font-bold md:text-2xl text-black "
+                    className="text-sm font-roboto font-bold md:text-2xl text-black"
                   >
                     {project.subtitle}
                   </p>
