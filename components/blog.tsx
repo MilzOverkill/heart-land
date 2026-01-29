@@ -117,7 +117,7 @@ export default function Blog() {
               />
             </div>
             <p className="text-white text-base mb-4 leading-relaxed">
-              As a leading distributor of Sri Lankan food products in the UAE, we recognize the vital role that small and medium-scale entrepreneurs play in preserving the rich culinary heritage of our homeland . That's why we've made it our mission to assist these dedicated farmers by facilitating the marketing of their products in Dubai.
+              As a leading distributor of Sri Lankan food products in the UAE, we recognize the vital role that small and medium-scale entrepreneurs play in preserving the rich culinary heritage of our homeland. That&apos;s why we&apos;ve made it our mission to assist these dedicated farmers by facilitating the marketing of their products in Dubai.
             </p>
             {/* <Link
               href="#"
