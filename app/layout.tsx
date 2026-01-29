@@ -42,8 +42,17 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Heart Land",
-  description: "Discover authentic Sri Lankan goods in the UAE",
+  title: {
+    default: "Heartland General Trading | Authentic Sri Lankan Products UAE",
+    template: "%s | Heartland General Trading"
+  },
+  description: "Heartland General Trading provides reliable import & export solutions, industrial materials, and consumer goods sourcing with competitive pricing and timely delivery.",
+  keywords: ["Sri Lankan products", "UAE import export", "food distribution", "Heartland Trading", "Dubai wholesale"],
+  openGraph: {
+    type: "website",
+    locale: "en_AE",
+    siteName: "Heartland General Trading",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
