@@ -109,7 +109,7 @@ export default function Blog() {
           <div className="group">
             <div className="relative overflow-hidden mb-6">
               <Image
-                src="/Rectangle 15.png"
+                src="/Frame 61 (3).png"
                 alt="Star anise spices"
                 width={400}
                 height={300}
@@ -117,22 +117,22 @@ export default function Blog() {
               />
             </div>
             <p className="text-white text-base mb-4 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              As a leading distributor of Sri Lankan food products in the UAE, we recognize the vital role that small and medium-scale entrepreneurs play in preserving the rich culinary heritage of our homeland . That's why we've made it our mission to assist these dedicated farmers by facilitating the marketing of their products in Dubai.
             </p>
-            <Link
+            {/* <Link
               href="#"
               className="inline-flex items-center text-white text-sm tracking-[0.3em] uppercase hover:text-gray-300 transition-colors"
             >
               LEARN MORE
               <span className="ml-2 text-lg">›</span>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Card 2 */}
           <div className="group">
             <div className="relative overflow-hidden mb-6">
               <Image
-                src="/Rectangle 15 (1).png"
+                src="/Frame 62.png"
                 alt="Spices on spoons"
                 width={400}
                 height={300}
@@ -140,22 +140,22 @@ export default function Blog() {
               />
             </div>
             <p className="text-white text-base mb-4 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              At Heartland General Trading, we celebrate the incredible contributions of women in the food industry, particularly those who are redefining the landscape of food enterprises in Sri Lanka. From farmers to entrepreneurs, women are taking the lead, fostering innovation and resilience while preserving the rich culinary traditions of our homeland.
             </p>
-            <Link
+            {/* <Link
               href="#"
               className="inline-flex items-center text-white text-sm tracking-[0.3em] uppercase hover:text-gray-300 transition-colors"
             >
               LEARN MORE
               <span className="ml-2 text-lg">›</span>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Card 3 */}
           <div className="group">
             <div className="relative overflow-hidden mb-6">
               <Image
-                src="/Rectangle 15 (2).png"
+                src="/Frame 63.png"
                 alt="Spice market shop"
                 width={400}
                 height={300}
@@ -163,15 +163,15 @@ export default function Blog() {
               />
             </div>
             <p className="text-white text-base mb-4 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Heartland General Trading has been a pioneer in the distribution of Sri Lankan food products since its establishment. With over 2 decades of experience, we have built a strong reputation for quality and authenticity, ensuring that every product reflects the rich culinary heritage of Sri Lanka. Our extensive network of suppliers and partnerships with local farmers allow us to source the highest quality ingredients. This commitment to excellence has made us the trusted choice for customers seeking genuine Sri Lankan flavors.
             </p>
-            <Link
+            {/* <Link
               href="#"
               className="inline-flex items-center text-white text-sm tracking-[0.3em] uppercase hover:text-gray-300 transition-colors"
             >
               LEARN MORE
               <span className="ml-2 text-lg">›</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
 

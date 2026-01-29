@@ -388,7 +388,8 @@ if (query.trim()) {
     <div className="flex items-center justify-between mb-2">
       <h4 className="font-semibold text-sm">{p.title}</h4>
     </div>
-    <div className="text-3xl font-bold">${p.price}</div>
+    {/* Price Was removed  */}
+    <div className="text-3xl font-bold"></div> 
   </div>
 ) : (
   <div className="h-0 m-0 p-0"></div>
