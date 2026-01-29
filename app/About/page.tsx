@@ -18,9 +18,6 @@ export default function AboutPagee() {
     <TeamMembers />
     <CommunitySection />
     <JoinWithUs />
-   
-  
-    
     </ >
   );
 }

@@ -45,7 +45,7 @@ export default function VisionMission() {
 
       <div className="px-4 sm:px-6 md:px-8 font-nunito">
         {/* Evolution paragraph */}
-        <p id="evolution-section" className="text-center text-[#676767] text-[12px] sm:text-lg md:text-[17px] leading-relaxed max-w-5xl mx-auto mb-10 md:mb-12 scroll-mt-20">
+        <p id="evolution-section" className="text-center text-[#676767] text-[12px] sm:text-lg md:text-[18px] leading-relaxed max-w-5xl mx-auto mb-15 md:mb-20 scroll-mt-20">
           Our Evolution: From Local Roots to Global Trading. While we began as a
           trusted local distributor, Heartland’s vision has always been global.
           In 2013, Heartland General Trading expanded its horizons by launching
@@ -63,11 +63,11 @@ export default function VisionMission() {
 
         {/* Heading + Identity */}
         <div className="text-center space-y-4 md:space-y-6 leading-6 md:leading-8 mb-8 md:mb-12 mx-auto">
-          <h2 className="text-[18px] sm:text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 transition-transform duration-500 hover:scale-[1.02] px-4">
+          <h2 className="text-[18px] sm:text-2xl md:text-4xl lg:text-[52px] font-semibold text-gray-900 transition-transform duration-500 hover:scale-[1.02] px-4 mb-10">
             Our Identity Vision and Mission
           </h2>
 
-          <p className="mt-4 font-medium text-[14px] sm:text-lg md:text-xl  max-w-5xl mx-auto leading-relaxed px-4">
+          <p className="mt-4 font-medium text-[14px] sm:text-lg md:text-2xl  max-w-6xl mx-auto leading-relaxed px-4 mb-15 md:mb-20">
             We are dedicated to redefining the way Sri Lankan food products reach
             international markets. With a focus on quality, authenticity, and
             trust, we aim to represent the rich heritage of Sri Lankan flavors

@@ -29,29 +29,27 @@ export default function CommunitySection() {
               alt="Community"
               fill
               sizes="(max-width: 1024px) 50vw, 806px"
-              className="object-cover rounded-tr-[250px] rounded-br-[250px] lg:rounded-tr-[350px] lg:rounded-br-[350px] xl:rounded-tr-[400px] xl:rounded-br-[400px]"
+              className="object-cover rounded-tr-[400px] rounded-br-[400px]"
               priority
             />
           </div>
 
           {/* TEXT */}
-          <div className="px-6 lg:px-10 xl:px-16 ml-2 lg:ml-6 xl:ml-8">
+          <div className="px-4 lg:px-6 xl:px-8 ml-0 lg:ml-1 xl:ml-2 pt-12 lg:pt-16 xl:pt-20">
             <h2 className={`${openSans.className} text-[36px] lg:text-[42px] xl:text-[48px] font-bold text-black mb-6 leading-tight`}>
-              Be part of our<br />community
+              Be part of our journey
             </h2>
 
-            <p className="text-base lg:text-lg xl:text-[18px] text-[#000000] font-normal leading-relaxed mb-8">
-              We love what we do and we do it with passion.<br />
-              We value the experimentation of the message<br />
-              and smart incentives.
+            <p className="text-base lg:text-lg xl:text-[24px] text-[#000000] font-normal leading-relaxed mb-12">
+              At Heartland, we believe in growing together. Our success is built on the hard work of local farmers and female entrepreneurs in Sri Lanka, and we are deeply committed to ensuring they thrive alongside us. By sourcing directly from these communities, we provide sustainable livelihoods and foster economic growth across the island. Beyond trade, we are incredibly proud of our signature &quot;Heartland <span className="text-red-600">♥</span> Homeland&quot; initiative.
             </p>
 
             <Link href="/About">
               <button
-                className={`${nunito.className} cursor-pointer px-10 lg:px-12 py-3.5 text-lg lg:text-xl font-bold border-2 border-[#E60012]
-                text-[#E60012] rounded-full transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1`}
+                className={`${nunito.className} cursor-pointer rounded-[20px] border-[3px] border-[#E60012] py-2 px-3 gap-[15px]
+                text-[#E60012] text-lg lg:text-2xl font-bold transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1`}
               >
-                Partner With Us
+                Initiatives to partner with us
               </button>
             </Link>
           </div>
@@ -64,21 +62,21 @@ export default function CommunitySection() {
 
           {/* Heading */}
           <h2 className={`${nunito.className} text-2xl font-bold text-black mb-4 leading-tight`}>
-            Be part of our community
+            Be part of our journey
           </h2>
 
           {/* Description */}
           <p className="text-sm text-[#000000] font-normal leading-relaxed mb-6 max-w-md">
-            We love what we do and we do it with passion. We value the experimentation of the message and smart incentives.
+            At Heartland, we believe in growing together. Our success is built on the hard work of local farmers and female entrepreneurs in Sri Lanka, and we are deeply committed to ensuring they thrive alongside us. By sourcing directly from these communities, we provide sustainable livelihoods and foster economic growth across the island. Beyond trade, we are incredibly proud of our signature &quot;Heartland <span className="text-red-600">♥</span> Homeland&quot; initiative.
           </p>
 
           {/* Button */}
           <Link href="/About">
             <button
-              className={`${nunito.className} cursor-pointer px-6 py-1 text-base font-bold border-2 border-[#E60012]
-              text-[#E60012] bg-white rounded-full transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg`}
+              className={`${nunito.className} cursor-pointer rounded-[20px] border-[3px] border-[#E60012] py-2.5 px-8 gap-[15px]
+              text-[#E60012] bg-white text-sm font-bold transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg`}
             >
-              Partner with Us
+              Initiatives to partner with us
             </button>
           </Link>
         </div>
