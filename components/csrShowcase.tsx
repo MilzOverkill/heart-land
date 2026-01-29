@@ -127,10 +127,10 @@ export default function CsrShowcase() {
 
         {/* Other second row cards */}
         <div
-          className="w-[235px] h-[342px] rounded-2xl bottom-[200px] overflow-hidden relative"
+          className="w-[235px] h-[342px] rounded-2xl -top-[200px] overflow-hidden relative"
           style={{ gridColumn: "2 / 3", gridRow: "2 / 3", transform: parallax(0.03) }}
         >
-          <Image src="/Union.png" alt="" fill className="object-cover" />
+          <Image src="/Union.png" alt="" width={235} height={342} className="object-cover w-full h-full absolute inset-0" />
           <p className={`${newsReader.className} absolute tracking-tighter leading-5 bottom-7 left-3 text-white px-3 py-1 rounded text-[19px] font-bold`}>
             Empowering Women in Agriculture
           </p>
