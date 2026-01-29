@@ -87,7 +87,7 @@ useEffect(() => {
           <p className="text-base sm:text-lg font-semibold text-[#BA5561] tracking-[3px] uppercase mb-2" style={{ fontFamily: 'Open Sans' }}>
             A Bit
           </p>
-          <h1 className="text-[18px] sm:text-xl lg:text-5xl tracking-[5px] leading-16 font-bold mb-4 md:mb-6" style={{ fontFamily: 'Open Sans' }}>
+          <h1 className="text-[18px] sm:text-xl lg:text-[52px] tracking-[5px] leading-16 font-bold mb-4 md:mb-6" style={{ fontFamily: 'Open Sans' }}>
             A 25-Year Legacy of Authenticity</h1>
           <p className="text-[15px] sm:text-lg text-gray-700 mb-6 leading-relaxed font-nunito">
            Welcome to Heartland General Trading Co LLC, your premier gateway to the authentic  
@@ -102,7 +102,7 @@ useEffect(() => {
               document.getElementById('evolution-section')?.scrollIntoView({ behavior: 'smooth' });
             }}
             className="
-              inline-block uppercase font-semibold text-sm sm:text-base
+              inline-block uppercase font-semibold text-sm sm:text-lg
               text-[#D11417]  px-0 sm:py-4
                transition-all duration-300 ease-out
               relative overflow-hidden
@@ -110,10 +110,6 @@ useEffect(() => {
               hover:-translate-y-1 transform-gpu tracking-widest
               cursor-pointer
             "
-            style={{
-              clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
-              borderBottomRightRadius: "10px",
-            }}
           >
           Explore More &gt;&gt;
           </button>
